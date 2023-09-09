@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6147F959-756D-442B-8888-CEA4BDD6DCE8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PDV.My.MyApplication</StartupObject>
+    <RootNamespace>PDV</RootNamespace>
+    <AssemblyName>PDV</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PDV.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PDV.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cadastros\frmCadFornecedores.Designer.vb">
+      <DependentUpon>frmCadFornecedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmCadFornecedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmCargos.Designer.vb">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmCargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmCategoriaProdutos.Designer.vb">
+      <DependentUpon>frmCategoriaProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmCategoriaProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmFuncionarios.Designer.vb">
+      <DependentUpon>frmFuncionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmFuncionarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmProdutos.Designer.vb">
+      <DependentUpon>frmProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmServicos.Designer.vb">
+      <DependentUpon>frmServicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmServicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmTipoServico.Designer.vb">
+      <DependentUpon>frmTipoServico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmTipoServico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmUnidadesMedidas.Designer.vb">
+      <DependentUpon>frmUnidadesMedidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmUnidadesMedidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>caixaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="caixa\frmAbrirCaixa.Designer.vb">
+      <DependentUpon>frmAbrirCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="caixa\frmAbrirCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixa\frmFecharCaixa.Designer.vb">
+      <DependentUpon>frmFecharCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="caixa\frmFecharCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixa\frmSangria.Designer.vb">
+      <DependentUpon>frmSangria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="caixa\frmSangria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdlformatarCaracteresEspeciais.vb" />
+    <Compile Include="relatorios\frmRelVendaData.Designer.vb">
+      <DependentUpon>frmRelVendaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelVendaData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTES\clsArquivo.vb" />
+    <Compile Include="classes\clsCNPJ.vb" />
+    <Compile Include="TESTES\clsJson.vb" />
+    <Compile Include="TESTES\clsTesteVendas.vb" />
+    <Compile Include="TESTES\clsVeiculo.vb" />
+    <Compile Include="conexao.vb" />
+    <Compile Include="estoquesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>estoquesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmEstoque.Designer.vb">
+      <DependentUpon>frmEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque\frmNivel.Designer.vb">
+      <DependentUpon>frmNivel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frmNivel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque\frnEstoqueConsulta.Designer.vb">
+      <DependentUpon>frnEstoqueConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\frnEstoqueConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginAdm.Designer.vb">
+      <DependentUpon>frmLoginAdm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginAdm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProdutosDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelCaixa.Designer.vb">
+      <DependentUpon>frmRelCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelComprovante.Designer.vb">
+      <DependentUpon>frmRelComprovante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelComprovante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelEstoque.Designer.vb">
+      <DependentUpon>frmRelEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelNiveis.Designer.vb">
+      <DependentUpon>frmRelNiveis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelNiveis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelProdutos.Designer.vb">
+      <DependentUpon>frmRelProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelProdutosVendidos.Designer.vb">
+      <DependentUpon>frmRelProdutosVendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelProdutosVendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\frmRelVendas.Designer.vb">
+      <DependentUpon>frmRelVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\frmRelVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTES\frmApagar.Designer.vb">
+      <DependentUpon>frmApagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTES\frmApagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTES\frmFormatDataGrid.Designer.vb">
+      <DependentUpon>frmFormatDataGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTES\frmFormatDataGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTES\testecn.vb" />
+    <Compile Include="TESTES\validarCNPJCPF\valida_CNPJ_CPF.vb" />
+    <Compile Include="VendasDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vendas\frmListarVendas.Designer.vb">
+      <DependentUpon>frmListarVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendas\frmListarVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendas\frmVendas.Designer.vb">
+      <DependentUpon>frmVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vendas\frmVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTES\TestesJson.Designer.vb">
+      <DependentUpon>TestesJson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTES\TestesJson.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cadastros\frmCadFornecedores.resx">
+      <DependentUpon>frmCadFornecedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmCargos.resx">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmCategoriaProdutos.resx">
+      <DependentUpon>frmCategoriaProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmFuncionarios.resx">
+      <DependentUpon>frmFuncionarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmProdutos.resx">
+      <DependentUpon>frmProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmServicos.resx">
+      <DependentUpon>frmServicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmTipoServico.resx">
+      <DependentUpon>frmTipoServico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmUnidadesMedidas.resx">
+      <DependentUpon>frmUnidadesMedidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caixa\frmAbrirCaixa.resx">
+      <DependentUpon>frmAbrirCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caixa\frmFecharCaixa.resx">
+      <DependentUpon>frmFecharCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caixa\frmSangria.resx">
+      <DependentUpon>frmSangria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmEstoque.resx">
+      <DependentUpon>frmEstoque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frmNivel.resx">
+      <DependentUpon>frmNivel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\frnEstoqueConsulta.resx">
+      <DependentUpon>frnEstoqueConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginAdm.resx">
+      <DependentUpon>frmLoginAdm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelCaixa.resx">
+      <DependentUpon>frmRelCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelComprovante.resx">
+      <DependentUpon>frmRelComprovante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelEstoque.resx">
+      <DependentUpon>frmRelEstoque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelNiveis.resx">
+      <DependentUpon>frmRelNiveis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelProdutos.resx">
+      <DependentUpon>frmRelProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelProdutosVendidos.resx">
+      <DependentUpon>frmRelProdutosVendidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelVendaData.resx">
+      <DependentUpon>frmRelVendaData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\frmRelVendas.resx">
+      <DependentUpon>frmRelVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\RelCaixa.rdlc" />
+    <EmbeddedResource Include="relatorios\RelComprovante.rdlc" />
+    <EmbeddedResource Include="relatorios\RelEntradaSaida.rdlc" />
+    <EmbeddedResource Include="relatorios\RelEstoquePorDatas.rdlc" />
+    <EmbeddedResource Include="relatorios\RelNiveis.rdlc" />
+    <EmbeddedResource Include="relatorios\relProdutos.rdlc" />
+    <EmbeddedResource Include="relatorios\RelProdutosVendidos.rdlc" />
+    <EmbeddedResource Include="relatorios\RelVendas.rdlc" />
+    <EmbeddedResource Include="relatorios\RelVendasData.rdlc" />
+    <EmbeddedResource Include="TESTES\frmApagar.resx">
+      <DependentUpon>frmApagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTES\frmFormatDataGrid.resx">
+      <DependentUpon>frmFormatDataGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendas\frmListarVendas.resx">
+      <DependentUpon>frmListarVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendas\frmVendas.resx">
+      <DependentUpon>frmVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTES\TestesJson.resx">
+      <DependentUpon>TestesJson.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="caixaDataSet.xsc">
+      <DependentUpon>caixaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="caixaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>caixaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="caixaDataSet.xss">
+      <DependentUpon>caixaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="estoquesDataSet.xsc">
+      <DependentUpon>estoquesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="estoquesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>estoquesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="estoquesDataSet.xss">
+      <DependentUpon>estoquesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="ProdutosDataSet.xsc">
+      <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProdutosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProdutosDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProdutosDataSet.xss">
+      <DependentUpon>ProdutosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendasDataSet.xsc">
+      <DependentUpon>VendasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendasDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendasDataSet.xss">
+      <DependentUpon>VendasDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Imagens de Produtos\bolinha cachorro.jpg" />
+    <Content Include="Imagens de Produtos\coca220ml-pet.jpg" />
+    <Content Include="imagens\-reports.48.png" />
+    <Content Include="imagens\Add.png" />
+    <Content Include="imagens\add_azul.png" />
+    <Content Include="imagens\Boss.bmp" />
+    <Content Include="imagens\boss.ico" />
+    <Content Include="imagens\box-sale.ico" />
+    <Content Include="imagens\Button-Add32.png" />
+    <Content Include="imagens\camera.png" />
+    <Content Include="imagens\categoriaProdutosdocumentation.32.png" />
+    <Content Include="imagens\CategoriaProdutos_Icon.ico" />
+    <Content Include="imagens\checklist-icon.png" />
+    <Content Include="imagens\clear.png" />
+    <Content Include="imagens\Close.gif" />
+    <Content Include="imagens\Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
+    <Content Include="imagens\deletar.png" />
+    <Content Include="imagens\Delete.png" />
+    <Content Include="imagens\Document.32.png" />
+    <Content Include="imagens\Edit.png" />
+    <Content Include="imagens\fechar tela.gif" />
+    <Content Include="imagens\if_money_299107.ico" />
+    <Content Include="imagens\images %2812%29.jpg" />
+    <Content Include="imagens\images %284%29.jpg" />
+    <Content Include="imagens\imagesemfoto.jpg" />
+    <Content Include="imagens\incluir.png" />
+    <Content Include="imagens\Inventory-maintenance.32.png" />
+    <Content Include="imagens\listadevendas.32.png" />
+    <Content Include="imagens\listaprod.48.png" />
+    <Content Include="imagens\lock.ico" />
+    <Content Include="imagens\logout.png" />
+    <Content Include="imagens\Maintenance.ico" />
+    <Content Include="imagens\maintenance.png" />
+    <Content Include="imagens\pdv-logo.jpg" />
+    <Content Include="imagens\people.ico" />
+    <Content Include="imagens\People.png" />
+    <Content Include="imagens\produtos.jfif" />
+    <Content Include="imagens\registrodevendas.32.png" />
+    <Content Include="imagens\relatorio de vendas.32.png" />
+    <Content Include="imagens\relatorioVendas.png" />
+    <Content Include="imagens\reports.32.png" />
+    <Content Include="imagens\Sales-report.ico" />
+    <Content Include="imagens\salvar.png" />
+    <Content Include="imagens\salvarPreto.png" />
+    <Content Include="imagens\Shadow-Cart.24.png" />
+    <Content Include="imagens\Shadow-Cart.ico" />
+    <Content Include="imagens\Shop-cart.ico" />
+    <Content Include="imagens\Stock-market.48.png" />
+    <Content Include="imagens\Stock.48.png" />
+    <Content Include="imagens\tela de login.jpg" />
+    <Content Include="imagens\TELA DE VENDA ALTERADA.jpg" />
+    <Content Include="imagens\TELA PRINCIPAL MENU AJUSTADA.jpg" />
+    <Content Include="imagens\TELA PRINCIPAL MENU.jpg" />
+    <Content Include="imagens\Treetog-Junior-Checklist.ico" />
+    <Content Include="imagens\User group.gif" />
+    <None Include="Resources\barCode.wav" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\caixaaberto.png" />
+    <None Include="Resources\caixafechado.png" />
+    <None Include="Resources\btVerde.jpg" />
+    <None Include="Resources\btVermelho.jpg" />
+    <Content Include="imagens\user group.ico" />
+    <None Include="Resources\imagesemfoto.jpg" />
+    <Content Include="imagens\Zoom.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
