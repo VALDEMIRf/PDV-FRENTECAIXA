@@ -38,6 +38,7 @@ Partial Class frmPrincipal
         Me.ProdutosToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UnidadeDeMedidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradaSaídaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -96,7 +97,7 @@ Partial Class frmPrincipal
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.FuncionariosToolStripMenuItem, Me.ServiçosToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ProdutosToolStripMenuItem3})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.FuncionariosToolStripMenuItem, Me.ServiçosToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ProdutosToolStripMenuItem3, Me.ToolStripMenuItem1})
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -162,22 +163,29 @@ Partial Class frmPrincipal
         '
         Me.ProdutosToolStripMenuItem2.Image = CType(resources.GetObject("ProdutosToolStripMenuItem2.Image"), System.Drawing.Image)
         Me.ProdutosToolStripMenuItem2.Name = "ProdutosToolStripMenuItem2"
-        Me.ProdutosToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ProdutosToolStripMenuItem2.Size = New System.Drawing.Size(177, 22)
         Me.ProdutosToolStripMenuItem2.Text = "Produtos"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'UnidadeDeMedidaToolStripMenuItem
         '
         Me.UnidadeDeMedidaToolStripMenuItem.Image = CType(resources.GetObject("UnidadeDeMedidaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UnidadeDeMedidaToolStripMenuItem.Name = "UnidadeDeMedidaToolStripMenuItem"
-        Me.UnidadeDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UnidadeDeMedidaToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.UnidadeDeMedidaToolStripMenuItem.Text = "Unidade de Medida"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Text = "Empresa"
         '
         'EstoqueToolStripMenuItem
         '
@@ -240,8 +248,9 @@ Partial Class frmPrincipal
         'RelatóriosToolStripMenuItem
         '
         Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutosToolStripMenuItem1, Me.VendasToolStripMenuItem1, Me.RelatórioDoCaixaToolStripMenuItem, Me.EntradaSaídaToolStripMenuItem1, Me.NíveisDoEstoqueToolStripMenuItem, Me.ProdutosMaisVendidosToolStripMenuItem, Me.VendasPorFuncionáriosToolStripMenuItem})
+        Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
-        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
         'ProdutosToolStripMenuItem1
@@ -646,4 +655,5 @@ Partial Class frmPrincipal
     Friend WithEvents ProdutosToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UnidadeDeMedidaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
 End Class

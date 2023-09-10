@@ -23,8 +23,6 @@ Partial Class frmVendas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVendas))
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblUsuario = New System.Windows.Forms.Label()
         Me.txtCodBarras = New System.Windows.Forms.TextBox()
         Me.btRelatorio = New System.Windows.Forms.Button()
         Me.btnNovo = New System.Windows.Forms.Button()
@@ -52,41 +50,26 @@ Partial Class frmVendas
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblDesconto = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblTotalCompra = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblValorRecebido = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblTroco = New System.Windows.Forms.Label()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(240, 272)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(54, 13)
-        Me.Label17.TabIndex = 228
-        Me.Label17.Text = "Operador:"
-        '
-        'lblUsuario
-        '
-        Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.Location = New System.Drawing.Point(300, 270)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(13, 17)
-        Me.lblUsuario.TabIndex = 234
-        Me.lblUsuario.Text = "-"
         '
         'txtCodBarras
         '
-        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodBarras.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodBarras.Location = New System.Drawing.Point(450, 82)
         Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(460, 30)
+        Me.txtCodBarras.Size = New System.Drawing.Size(450, 31)
         Me.txtCodBarras.TabIndex = 220
         '
         'btRelatorio
@@ -100,7 +83,7 @@ Partial Class frmVendas
         Me.btRelatorio.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRelatorio.ForeColor = System.Drawing.Color.Black
         Me.btRelatorio.Image = CType(resources.GetObject("btRelatorio.Image"), System.Drawing.Image)
-        Me.btRelatorio.Location = New System.Drawing.Point(205, 499)
+        Me.btRelatorio.Location = New System.Drawing.Point(241, 523)
         Me.btRelatorio.Margin = New System.Windows.Forms.Padding(6)
         Me.btRelatorio.Name = "btRelatorio"
         Me.btRelatorio.Size = New System.Drawing.Size(99, 30)
@@ -122,7 +105,7 @@ Partial Class frmVendas
         Me.btnNovo.ForeColor = System.Drawing.Color.Black
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
         Me.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNovo.Location = New System.Drawing.Point(36, 393)
+        Me.btnNovo.Location = New System.Drawing.Point(13, 475)
         Me.btnNovo.Margin = New System.Windows.Forms.Padding(6)
         Me.btnNovo.Name = "btnNovo"
         Me.btnNovo.Size = New System.Drawing.Size(76, 36)
@@ -144,7 +127,7 @@ Partial Class frmVendas
         Me.btSair.ForeColor = System.Drawing.Color.Black
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
         Me.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btSair.Location = New System.Drawing.Point(254, 420)
+        Me.btSair.Location = New System.Drawing.Point(108, 535)
         Me.btSair.Margin = New System.Windows.Forms.Padding(6)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(71, 30)
@@ -166,7 +149,7 @@ Partial Class frmVendas
         Me.btnSalvar.ForeColor = System.Drawing.Color.Black
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
         Me.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalvar.Location = New System.Drawing.Point(142, 375)
+        Me.btnSalvar.Location = New System.Drawing.Point(13, 523)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(6)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(83, 35)
@@ -188,7 +171,7 @@ Partial Class frmVendas
         Me.btnExcluir.ForeColor = System.Drawing.Color.Black
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
         Me.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExcluir.Location = New System.Drawing.Point(237, 375)
+        Me.btnExcluir.Location = New System.Drawing.Point(108, 488)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(6)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(88, 37)
@@ -202,22 +185,24 @@ Partial Class frmVendas
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.BackColor = System.Drawing.Color.White
-        Me.lblTotal.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Black
-        Me.lblTotal.Location = New System.Drawing.Point(1003, 164)
+        Me.lblTotal.Location = New System.Drawing.Point(1010, 157)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(24, 32)
+        Me.lblTotal.Size = New System.Drawing.Size(28, 39)
         Me.lblTotal.TabIndex = 231
         Me.lblTotal.Text = "-"
         '
         'txtEstoque
         '
+        Me.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEstoque.Enabled = False
-        Me.txtEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEstoque.Location = New System.Drawing.Point(452, 502)
         Me.txtEstoque.Name = "txtEstoque"
-        Me.txtEstoque.Size = New System.Drawing.Size(130, 27)
+        Me.txtEstoque.ReadOnly = True
+        Me.txtEstoque.Size = New System.Drawing.Size(175, 23)
         Me.txtEstoque.TabIndex = 224
         '
         'dg
@@ -232,11 +217,13 @@ Partial Class frmVendas
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(408, 149)
+        Me.dg.Size = New System.Drawing.Size(408, 403)
         Me.dg.TabIndex = 230
         '
         'cbProduto
         '
+        Me.cbProduto.Enabled = False
+        Me.cbProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProduto.FormattingEnabled = True
         Me.cbProduto.Location = New System.Drawing.Point(450, 178)
@@ -246,18 +233,19 @@ Partial Class frmVendas
         '
         'txtQuantVendida
         '
-        Me.txtQuantVendida.Enabled = False
-        Me.txtQuantVendida.Location = New System.Drawing.Point(127, 499)
+        Me.txtQuantVendida.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantVendida.Location = New System.Drawing.Point(693, 344)
         Me.txtQuantVendida.Name = "txtQuantVendida"
-        Me.txtQuantVendida.Size = New System.Drawing.Size(69, 20)
+        Me.txtQuantVendida.Size = New System.Drawing.Size(175, 30)
         Me.txtQuantVendida.TabIndex = 192
         '
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.White
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(14, 499)
+        Me.Label15.Location = New System.Drawing.Point(695, 319)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(107, 17)
         Me.Label15.TabIndex = 193
@@ -265,23 +253,28 @@ Partial Class frmVendas
         '
         'txtValor
         '
+        Me.txtValor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtValor.Enabled = False
-        Me.txtValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtValor.Location = New System.Drawing.Point(454, 420)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(115, 27)
+        Me.txtValor.ReadOnly = True
+        Me.txtValor.Size = New System.Drawing.Size(175, 23)
         Me.txtValor.TabIndex = 190
         '
         'txtQuantidade
         '
-        Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuantidade.Location = New System.Drawing.Point(452, 345)
         Me.txtQuantidade.Name = "txtQuantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(148, 27)
+        Me.txtQuantidade.Size = New System.Drawing.Size(175, 23)
         Me.txtQuantidade.TabIndex = 191
         '
         'cbCliente
         '
+        Me.cbCliente.Enabled = False
+        Me.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCliente.FormattingEnabled = True
         Me.cbCliente.Location = New System.Drawing.Point(450, 257)
@@ -291,26 +284,30 @@ Partial Class frmVendas
         '
         'txtNumVenda
         '
-        Me.txtNumVenda.Location = New System.Drawing.Point(184, 307)
+        Me.txtNumVenda.Location = New System.Drawing.Point(560, 549)
         Me.txtNumVenda.Name = "txtNumVenda"
-        Me.txtNumVenda.Size = New System.Drawing.Size(61, 20)
+        Me.txtNumVenda.Size = New System.Drawing.Size(33, 20)
         Me.txtNumVenda.TabIndex = 186
+        Me.txtNumVenda.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(90, 310)
+        Me.Label4.Location = New System.Drawing.Point(488, 552)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 187
         Me.Label4.Text = "Núm Venda:"
+        Me.Label4.Visible = False
         '
         'pbImagem
         '
-        Me.pbImagem.Location = New System.Drawing.Point(743, 392)
+        Me.pbImagem.Enabled = False
+        Me.pbImagem.Location = New System.Drawing.Point(452, 549)
         Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(89, 79)
+        Me.pbImagem.Size = New System.Drawing.Size(25, 37)
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 226
         Me.pbImagem.TabStop = False
@@ -318,40 +315,43 @@ Partial Class frmVendas
         'txtCodigo
         '
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(12, 375)
+        Me.txtCodigo.Location = New System.Drawing.Point(605, 572)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(43, 20)
+        Me.txtCodigo.Size = New System.Drawing.Size(24, 20)
         Me.txtCodigo.TabIndex = 223
         Me.txtCodigo.Visible = False
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(72, 451)
+        Me.txtBuscar.Location = New System.Drawing.Point(560, 575)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(129, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(27, 20)
         Me.txtBuscar.TabIndex = 222
+        Me.txtBuscar.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(14, 451)
+        Me.Label1.Location = New System.Drawing.Point(502, 575)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 17)
         Me.Label1.TabIndex = 221
         Me.Label1.Text = "Buscar:"
+        Me.Label1.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(949, 164)
+        Me.Label2.Location = New System.Drawing.Point(950, 158)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 32)
+        Me.Label2.Size = New System.Drawing.Size(61, 39)
         Me.Label2.TabIndex = 235
         Me.Label2.Text = "R$"
         '
@@ -361,7 +361,7 @@ Partial Class frmVendas
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(946, 74)
+        Me.Label3.Location = New System.Drawing.Point(950, 75)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 32)
@@ -374,7 +374,7 @@ Partial Class frmVendas
         Me.lblTotalUnit.BackColor = System.Drawing.Color.White
         Me.lblTotalUnit.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalUnit.ForeColor = System.Drawing.Color.Black
-        Me.lblTotalUnit.Location = New System.Drawing.Point(1000, 74)
+        Me.lblTotalUnit.Location = New System.Drawing.Point(1010, 75)
         Me.lblTotalUnit.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTotalUnit.Name = "lblTotalUnit"
         Me.lblTotalUnit.Size = New System.Drawing.Size(24, 32)
@@ -385,12 +385,12 @@ Partial Class frmVendas
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.White
-        Me.Label5.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(949, 250)
+        Me.Label5.Location = New System.Drawing.Point(950, 250)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(50, 32)
+        Me.Label5.Size = New System.Drawing.Size(61, 39)
         Me.Label5.TabIndex = 239
         Me.Label5.Text = "R$"
         '
@@ -398,12 +398,12 @@ Partial Class frmVendas
         '
         Me.lblDesconto.AutoSize = True
         Me.lblDesconto.BackColor = System.Drawing.Color.White
-        Me.lblDesconto.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesconto.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDesconto.ForeColor = System.Drawing.Color.Black
-        Me.lblDesconto.Location = New System.Drawing.Point(1003, 250)
+        Me.lblDesconto.Location = New System.Drawing.Point(1010, 248)
         Me.lblDesconto.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblDesconto.Name = "lblDesconto"
-        Me.lblDesconto.Size = New System.Drawing.Size(24, 32)
+        Me.lblDesconto.Size = New System.Drawing.Size(28, 39)
         Me.lblDesconto.TabIndex = 238
         Me.lblDesconto.Text = "-"
         '
@@ -411,79 +411,100 @@ Partial Class frmVendas
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.White
-        Me.Label7.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(949, 345)
+        Me.Label7.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Green
+        Me.Label7.Location = New System.Drawing.Point(950, 339)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(50, 32)
+        Me.Label7.Size = New System.Drawing.Size(61, 39)
         Me.Label7.TabIndex = 241
         Me.Label7.Text = "R$"
         '
-        'Label8
+        'lblTotalCompra
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.White
-        Me.Label8.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(1003, 345)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(24, 32)
-        Me.Label8.TabIndex = 240
-        Me.Label8.Text = "-"
+        Me.lblTotalCompra.AutoSize = True
+        Me.lblTotalCompra.BackColor = System.Drawing.Color.White
+        Me.lblTotalCompra.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalCompra.ForeColor = System.Drawing.Color.Green
+        Me.lblTotalCompra.Location = New System.Drawing.Point(1010, 339)
+        Me.lblTotalCompra.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblTotalCompra.Name = "lblTotalCompra"
+        Me.lblTotalCompra.Size = New System.Drawing.Size(28, 39)
+        Me.lblTotalCompra.TabIndex = 240
+        Me.lblTotalCompra.Text = "-"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.White
-        Me.Label9.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(959, 436)
+        Me.Label9.Location = New System.Drawing.Point(950, 428)
         Me.Label9.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(50, 32)
+        Me.Label9.Size = New System.Drawing.Size(61, 39)
         Me.Label9.TabIndex = 243
         Me.Label9.Text = "R$"
         '
-        'Label10
+        'lblValorRecebido
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.White
-        Me.Label10.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(1013, 436)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(24, 32)
-        Me.Label10.TabIndex = 242
-        Me.Label10.Text = "-"
+        Me.lblValorRecebido.AutoSize = True
+        Me.lblValorRecebido.BackColor = System.Drawing.Color.White
+        Me.lblValorRecebido.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblValorRecebido.ForeColor = System.Drawing.Color.Black
+        Me.lblValorRecebido.Location = New System.Drawing.Point(1010, 428)
+        Me.lblValorRecebido.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblValorRecebido.Name = "lblValorRecebido"
+        Me.lblValorRecebido.Size = New System.Drawing.Size(28, 39)
+        Me.lblValorRecebido.TabIndex = 242
+        Me.lblValorRecebido.Text = "-"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.White
-        Me.Label12.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(974, 540)
+        Me.Label12.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Red
+        Me.Label12.Location = New System.Drawing.Point(950, 529)
         Me.Label12.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(50, 32)
+        Me.Label12.Size = New System.Drawing.Size(61, 39)
         Me.Label12.TabIndex = 245
         Me.Label12.Text = "R$"
         '
-        'Label13
+        'lblTroco
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.White
-        Me.Label13.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(1028, 540)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(24, 32)
-        Me.Label13.TabIndex = 244
-        Me.Label13.Text = "-"
+        Me.lblTroco.AutoSize = True
+        Me.lblTroco.BackColor = System.Drawing.Color.White
+        Me.lblTroco.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTroco.ForeColor = System.Drawing.Color.Red
+        Me.lblTroco.Location = New System.Drawing.Point(1010, 529)
+        Me.lblTroco.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.lblTroco.Name = "lblTroco"
+        Me.lblTroco.Size = New System.Drawing.Size(28, 39)
+        Me.lblTroco.TabIndex = 244
+        Me.lblTroco.Text = "-"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(57, 17)
+        Me.ToolStripStatusLabel1.Text = "Operador"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(0, 17)
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 589)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1192, 22)
+        Me.StatusStrip1.TabIndex = 246
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'frmVendas
         '
@@ -491,13 +512,14 @@ Partial Class frmVendas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1192, 581)
+        Me.ClientSize = New System.Drawing.Size(1192, 611)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.lblTroco)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblValorRecebido)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.lblTotalCompra)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblDesconto)
         Me.Controls.Add(Me.Label3)
@@ -508,11 +530,9 @@ Partial Class frmVendas
         Me.Controls.Add(Me.btRelatorio)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.btnNovo)
-        Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.txtValor)
         Me.Controls.Add(Me.txtQuantidade)
         Me.Controls.Add(Me.btnSalvar)
-        Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.cbCliente)
         Me.Controls.Add(Me.btnExcluir)
         Me.Controls.Add(Me.btSair)
@@ -533,16 +553,15 @@ Partial Class frmVendas
         Me.MinimizeBox = False
         Me.Name = "frmVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Vendas"
+        Me.Text = "1"
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label17 As Label
-    Friend WithEvents lblUsuario As Label
     Friend WithEvents txtCodBarras As TextBox
     Friend WithEvents btRelatorio As Button
     Friend WithEvents btnNovo As Button
@@ -570,9 +589,12 @@ Partial Class frmVendas
     Friend WithEvents Label5 As Label
     Friend WithEvents lblDesconto As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblTotalCompra As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblValorRecebido As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblTroco As Label
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents lblUsuario As ToolStripStatusLabel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

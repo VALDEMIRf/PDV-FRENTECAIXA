@@ -124,6 +124,12 @@
     <Compile Include="cadastros\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="cadastros\frmEmpresa.Designer.vb">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cadastros\frmFuncionarios.Designer.vb">
       <DependentUpon>frmFuncionarios.vb</DependentUpon>
     </Compile>
@@ -345,6 +351,9 @@
     <EmbeddedResource Include="cadastros\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmFuncionarios.resx">
       <DependentUpon>frmFuncionarios.vb</DependentUpon>
     </EmbeddedResource>
@@ -516,6 +525,8 @@
     <Content Include="imagens\checklist-icon.png" />
     <Content Include="imagens\clear.png" />
     <Content Include="imagens\Close.gif" />
+    <Content Include="imagens\Company-building.32.png" />
+    <Content Include="imagens\Company-building.ico" />
     <Content Include="imagens\Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico" />
     <Content Include="imagens\deletar.png" />
     <Content Include="imagens\Delete.png" />

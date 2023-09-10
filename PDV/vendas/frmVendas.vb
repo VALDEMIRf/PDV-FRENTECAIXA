@@ -74,26 +74,31 @@ Public Class frmVendas
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        'dg.Columns(8).Visible = False
+        dg.Columns(3).Visible = False
+        dg.Columns(8).Visible = False
         dg.Columns(9).Visible = False
         dg.Columns(10).Visible = False
 
         dg.Columns(1).HeaderText = "N° Venda"
         dg.Columns(2).HeaderText = "Produto"
-        dg.Columns(3).HeaderText = "Cliente"
+        ' dg.Columns(3).HeaderText = "Cliente"
         dg.Columns(4).HeaderText = "Valor Unit"
         dg.Columns(5).HeaderText = "Quant"
         dg.Columns(6).HeaderText = "Valor Total"
-        dg.Columns(7).HeaderText = "Funcionário"
-        dg.Columns(8).HeaderText = "Dt Venda"
+        dg.Columns(7).HeaderText = "Cód. Barras"
+        ' dg.Columns(8).HeaderText = "Funcionário"
+        dg.Columns(9).HeaderText = "Dt Venda"
 
 
         dg.Columns(1).Width = 60
         dg.Columns(2).Width = 180
-        dg.Columns(3).Width = 180
+        ' dg.Columns(3).Width = 180
         dg.Columns(4).Width = 90
         dg.Columns(5).Width = 50
         dg.Columns(6).Width = 90
+        dg.Columns(7).Width = 130
+        dg.Columns(9).Width = 70
+
 
     End Sub
 
@@ -342,8 +347,6 @@ Public Class frmVendas
 
         End If
     End Sub
-
-
 
 
     Private Sub dg_CellClick(sender As Object, e As DataGridViewCellEventArgs)

@@ -567,4 +567,9 @@ Public Class frmPrincipal
         Dim form = New frmUnidadesMedidas
         form.ShowDialog()
     End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        Dim form = New frmEmpresa
+        form.ShowDialog()
+    End Sub
 End Class
