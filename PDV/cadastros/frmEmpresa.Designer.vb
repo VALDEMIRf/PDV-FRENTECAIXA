@@ -132,7 +132,7 @@ Partial Class frmEmpresa
         Me.txtUF.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtUF.Name = "txtUF"
         Me.txtUF.Size = New System.Drawing.Size(59, 23)
-        Me.txtUF.TabIndex = 8
+        Me.txtUF.TabIndex = 9
         '
         'txtEmail
         '
@@ -141,7 +141,7 @@ Partial Class frmEmpresa
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(8, 6, 8, 6)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(336, 21)
-        Me.txtEmail.TabIndex = 10
+        Me.txtEmail.TabIndex = 13
         '
         'txtCidade
         '
@@ -150,7 +150,7 @@ Partial Class frmEmpresa
         Me.txtCidade.Margin = New System.Windows.Forms.Padding(8, 6, 8, 6)
         Me.txtCidade.Name = "txtCidade"
         Me.txtCidade.Size = New System.Drawing.Size(335, 21)
-        Me.txtCidade.TabIndex = 212
+        Me.txtCidade.TabIndex = 8
         '
         'Label1
         '
@@ -313,7 +313,7 @@ Partial Class frmEmpresa
         Me.txtCelular.Mask = "(99) 00000-0000"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(121, 23)
-        Me.txtCelular.TabIndex = 9
+        Me.txtCelular.TabIndex = 12
         '
         'txtTelResidencial
         '
@@ -321,7 +321,7 @@ Partial Class frmEmpresa
         Me.txtTelResidencial.Mask = "(99) 0000-0000"
         Me.txtTelResidencial.Name = "txtTelResidencial"
         Me.txtTelResidencial.Size = New System.Drawing.Size(93, 23)
-        Me.txtTelResidencial.TabIndex = 247
+        Me.txtTelResidencial.TabIndex = 11
         '
         'txtCEP
         '
@@ -329,7 +329,7 @@ Partial Class frmEmpresa
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
         Me.txtCEP.Size = New System.Drawing.Size(89, 23)
-        Me.txtCEP.TabIndex = 248
+        Me.txtCEP.TabIndex = 10
         '
         'dg
         '
@@ -361,7 +361,7 @@ Partial Class frmEmpresa
         Me.btSair.Margin = New System.Windows.Forms.Padding(4)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(79, 45)
-        Me.btSair.TabIndex = 14
+        Me.btSair.TabIndex = 17
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -382,7 +382,7 @@ Partial Class frmEmpresa
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(117, 45)
-        Me.btnSalvar.TabIndex = 11
+        Me.btnSalvar.TabIndex = 14
         Me.btnSalvar.Text = "Salvar"
         Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -403,7 +403,7 @@ Partial Class frmEmpresa
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(106, 45)
-        Me.btnEditar.TabIndex = 12
+        Me.btnEditar.TabIndex = 15
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -424,7 +424,7 @@ Partial Class frmEmpresa
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(102, 45)
-        Me.btnExcluir.TabIndex = 13
+        Me.btnExcluir.TabIndex = 16
         Me.btnExcluir.Text = "Excluir"
         Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -472,7 +472,7 @@ Partial Class frmEmpresa
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmEmpresa"

@@ -59,12 +59,12 @@ Public Class frmFuncionarios
         txtTel.Enabled = True
         txtEmail.Enabled = True
         txtdtNasc.Enabled = True
-        txtEndereco.Enabled = True
+        'txtEndereco.Enabled = True
         txtNumero.Enabled = True
-        txtCompl.Enabled = True
-        txtBairro.Enabled = True
-        txtCidade.Enabled = True
-        txtUF.Enabled = True
+        '  txtCompl.Enabled = True
+        '  txtBairro.Enabled = True
+        '  txtCidade.Enabled = True
+        ' txtUF.Enabled = True
         txtCEP.Enabled = True
         cbCargo.Enabled = True
         cbTurno.Enabled = True
@@ -487,5 +487,18 @@ Public Class frmFuncionarios
         pbImagem.Image = ImagemCarregada
     End Sub
 
+    Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
+        Try
+            Dim ws = New WSCEP.AtendeClienteClient()
+            Dim resposta = ws.consultaCEP(txtCEP.Text)
+            txtEndereco.Text = resposta.end
+            txtComplemento.Text = resposta.complemento2  'complemento
+            txtBairro.Text = resposta.bairro
+            txtCidade.Text = resposta.cidade
+            txtUF.Text = resposta.uf
 
+        Catch ex As Exception
+            MsgBox("Erro ao buscar CEP.!" & vbNewLine & vbNewLine & ex.Message.ToString, vbCritical)
+        End Try
+    End Sub
 End Class

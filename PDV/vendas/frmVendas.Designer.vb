@@ -55,9 +55,11 @@ Partial Class frmVendas
         Me.lblValorRecebido = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lblTroco = New System.Windows.Forms.Label()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Operador = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblEmpresa = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.nome = New System.Windows.Forms.ToolStripStatusLabel()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -66,10 +68,10 @@ Partial Class frmVendas
         'txtCodBarras
         '
         Me.txtCodBarras.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodBarras.Location = New System.Drawing.Point(450, 82)
+        Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodBarras.Location = New System.Drawing.Point(450, 75)
         Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(450, 31)
+        Me.txtCodBarras.Size = New System.Drawing.Size(450, 38)
         Me.txtCodBarras.TabIndex = 220
         '
         'btRelatorio
@@ -198,11 +200,11 @@ Partial Class frmVendas
         '
         Me.txtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEstoque.Enabled = False
-        Me.txtEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEstoque.Location = New System.Drawing.Point(452, 502)
+        Me.txtEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEstoque.Location = New System.Drawing.Point(450, 498)
         Me.txtEstoque.Name = "txtEstoque"
         Me.txtEstoque.ReadOnly = True
-        Me.txtEstoque.Size = New System.Drawing.Size(175, 23)
+        Me.txtEstoque.Size = New System.Drawing.Size(175, 31)
         Me.txtEstoque.TabIndex = 224
         '
         'dg
@@ -224,11 +226,11 @@ Partial Class frmVendas
         '
         Me.cbProduto.Enabled = False
         Me.cbProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProduto.FormattingEnabled = True
-        Me.cbProduto.Location = New System.Drawing.Point(450, 178)
+        Me.cbProduto.Location = New System.Drawing.Point(441, 170)
         Me.cbProduto.Name = "cbProduto"
-        Me.cbProduto.Size = New System.Drawing.Size(448, 28)
+        Me.cbProduto.Size = New System.Drawing.Size(469, 46)
         Me.cbProduto.TabIndex = 177
         '
         'txtQuantVendida
@@ -255,20 +257,20 @@ Partial Class frmVendas
         '
         Me.txtValor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtValor.Enabled = False
-        Me.txtValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtValor.Location = New System.Drawing.Point(454, 420)
+        Me.txtValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtValor.Location = New System.Drawing.Point(450, 415)
         Me.txtValor.Name = "txtValor"
         Me.txtValor.ReadOnly = True
-        Me.txtValor.Size = New System.Drawing.Size(175, 23)
+        Me.txtValor.Size = New System.Drawing.Size(175, 31)
         Me.txtValor.TabIndex = 190
         '
         'txtQuantidade
         '
         Me.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuantidade.Location = New System.Drawing.Point(452, 345)
+        Me.txtQuantidade.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantidade.Location = New System.Drawing.Point(450, 341)
         Me.txtQuantidade.Name = "txtQuantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(175, 23)
+        Me.txtQuantidade.Size = New System.Drawing.Size(175, 31)
         Me.txtQuantidade.TabIndex = 191
         '
         'cbCliente
@@ -281,10 +283,11 @@ Partial Class frmVendas
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(448, 28)
         Me.cbCliente.TabIndex = 178
+        Me.cbCliente.Visible = False
         '
         'txtNumVenda
         '
-        Me.txtNumVenda.Location = New System.Drawing.Point(560, 549)
+        Me.txtNumVenda.Location = New System.Drawing.Point(593, 545)
         Me.txtNumVenda.Name = "txtNumVenda"
         Me.txtNumVenda.Size = New System.Drawing.Size(33, 20)
         Me.txtNumVenda.TabIndex = 186
@@ -315,7 +318,7 @@ Partial Class frmVendas
         'txtCodigo
         '
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(605, 572)
+        Me.txtCodigo.Location = New System.Drawing.Point(593, 575)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(24, 20)
         Me.txtCodigo.TabIndex = 223
@@ -485,12 +488,6 @@ Partial Class frmVendas
         Me.lblTroco.TabIndex = 244
         Me.lblTroco.Text = "-"
         '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(57, 17)
-        Me.ToolStripStatusLabel1.Text = "Operador"
-        '
         'lblUsuario
         '
         Me.lblUsuario.Name = "lblUsuario"
@@ -499,12 +496,33 @@ Partial Class frmVendas
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblUsuario})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 589)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.nome, Me.lblEmpresa, Me.Operador, Me.lblUsuario})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 605)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1192, 22)
         Me.StatusStrip1.TabIndex = 246
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Operador
+        '
+        Me.Operador.Enabled = False
+        Me.Operador.Margin = New System.Windows.Forms.Padding(35, 3, 0, 2)
+        Me.Operador.Name = "Operador"
+        Me.Operador.Size = New System.Drawing.Size(57, 17)
+        Me.Operador.Text = "Operador"
+        '
+        'lblEmpresa
+        '
+        Me.lblEmpresa.Name = "lblEmpresa"
+        Me.lblEmpresa.Size = New System.Drawing.Size(52, 17)
+        Me.lblEmpresa.Text = "Empresa"
+        '
+        'nome
+        '
+        Me.nome.Name = "nome"
+        Me.nome.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
+        Me.nome.Size = New System.Drawing.Size(104, 17)
+        Me.nome.Text = "Nome da Empresa"
         '
         'frmVendas
         '
@@ -512,8 +530,7 @@ Partial Class frmVendas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1192, 611)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(1192, 627)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.lblTroco)
         Me.Controls.Add(Me.Label9)
@@ -546,6 +563,7 @@ Partial Class frmVendas
         Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -553,7 +571,7 @@ Partial Class frmVendas
         Me.MinimizeBox = False
         Me.Name = "frmVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "1"
+        Me.Text = "Tela de Vendas"
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
@@ -594,7 +612,9 @@ Partial Class frmVendas
     Friend WithEvents lblValorRecebido As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents lblTroco As Label
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents lblUsuario As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents nome As ToolStripStatusLabel
+    Friend WithEvents lblEmpresa As ToolStripStatusLabel
+    Friend WithEvents Operador As ToolStripStatusLabel
 End Class

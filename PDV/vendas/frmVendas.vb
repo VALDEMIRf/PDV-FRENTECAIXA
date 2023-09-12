@@ -30,6 +30,7 @@ Public Class frmVendas
 
         End If
 
+        CarregarEmpresa()
 
         Listar()
 
@@ -106,12 +107,25 @@ Public Class frmVendas
 
         Dim dt As New DataTable
         Dim da As SqlDataAdapter
+        Dim cmd As SqlCommand
 
         Try
             abrir()
-            da = New SqlDataAdapter("pa_VendasLista", con)
+            '   da = New SqlDataAdapter("pa_VendasLista", con)
+            '  da.Fill(dt)
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
+
+            '            ven.valor,pro.codigo_barras,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente
+            'FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto 
+            'INNER JOIN tbClientes  as cli on ven.id_cliente =cli.id_cliente order by num_vendas desc
+
+            cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
+            cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
+
+            da = New SqlDataAdapter(cmd)
 
             da.Fill(dt)
+
             dg.DataSource = dt
 
             FormatarDG()
@@ -157,6 +171,27 @@ Public Class frmVendas
 
     End Sub
 
+    Sub CarregarEmpresa()
+
+        Dim cmd As New SqlCommand("pa_empresa_listar", con)
+        Try
+                abrir()
+                cmd.CommandType = 4
+            'cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
+            'cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
+            'cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
+            'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
+            cmd.Parameters.Add("@razaoSocial", SqlDbType.VarChar, 100).Direction = 2
+            cmd.ExecuteNonQuery()
+
+            Dim empresa As String = cmd.Parameters("@razaoSocial").Value
+            lblEmpresa.Text = empresa
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+    End Sub
 
     Private Sub btnNovo_Click_1(sender As Object, e As EventArgs) Handles btnNovo.Click
         CarregarClientes()
@@ -168,10 +203,6 @@ Public Class frmVendas
         btnExcluir.Enabled = False
         gerarnum()
     End Sub
-
-
-
-
 
     Private Sub atualizarValor()
         Dim cmd As New SqlCommand("pa_Vendas_buscarValorProd", con)
