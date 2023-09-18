@@ -144,22 +144,22 @@
     <Compile Include="cadastros\frmProdutos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastros\frmServicos.Designer.vb">
+    <Compile Include="Movimentacao\frmServicos.Designer.vb">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastros\frmServicos.vb">
+    <Compile Include="Movimentacao\frmServicos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastros\frmTipoServico.Designer.vb">
+    <Compile Include="Movimentacao\frmTipoServico.Designer.vb">
       <DependentUpon>frmTipoServico.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastros\frmTipoServico.vb">
+    <Compile Include="Movimentacao\frmTipoServico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastros\frmUnidadesMedidas.Designer.vb">
+    <Compile Include="Movimentacao\frmUnidadesMedidas.Designer.vb">
       <DependentUpon>frmUnidadesMedidas.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastros\frmUnidadesMedidas.vb">
+    <Compile Include="Movimentacao\frmUnidadesMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="caixaDataSet.Designer.vb">
@@ -367,13 +367,13 @@
     <EmbeddedResource Include="cadastros\frmProdutos.resx">
       <DependentUpon>frmProdutos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastros\frmServicos.resx">
+    <EmbeddedResource Include="Movimentacao\frmServicos.resx">
       <DependentUpon>frmServicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastros\frmTipoServico.resx">
+    <EmbeddedResource Include="Movimentacao\frmTipoServico.resx">
       <DependentUpon>frmTipoServico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastros\frmUnidadesMedidas.resx">
+    <EmbeddedResource Include="Movimentacao\frmUnidadesMedidas.resx">
       <DependentUpon>frmUnidadesMedidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="caixa\frmAbrirCaixa.resx">
@@ -734,9 +734,11 @@
     <Content Include="imagens\relatorio de vendas.32.png" />
     <Content Include="imagens\relatorioVendas.png" />
     <Content Include="imagens\reports.32.png" />
+    <Content Include="imagens\rosto.jpg" />
     <Content Include="imagens\Sales-report.ico" />
     <Content Include="imagens\salvar.png" />
     <Content Include="imagens\salvarPreto.png" />
+    <Content Include="imagens\sem-rosto.jpg" />
     <Content Include="imagens\Shadow-Cart.24.png" />
     <Content Include="imagens\Shadow-Cart.ico" />
     <Content Include="imagens\Shop-cart.ico" />
@@ -773,6 +775,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WSCEP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Financeiro\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -66,6 +66,8 @@ Partial Class frmProdutos
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Consulta = New System.Windows.Forms.TabPage()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.txtVlrCompra = New System.Windows.Forms.TextBox()
+        Me.txtVlr = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -130,8 +132,9 @@ Partial Class frmProdutos
         '
         Me.txtValorCompra.Location = New System.Drawing.Point(687, 34)
         Me.txtValorCompra.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtValorCompra.MaxLength = 16
         Me.txtValorCompra.Name = "txtValorCompra"
-        Me.txtValorCompra.Size = New System.Drawing.Size(89, 22)
+        Me.txtValorCompra.Size = New System.Drawing.Size(90, 22)
         Me.txtValorCompra.TabIndex = 158
         '
         'Label4
@@ -150,8 +153,9 @@ Partial Class frmProdutos
         '
         Me.txtValor.Location = New System.Drawing.Point(687, 83)
         Me.txtValor.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtValor.MaxLength = 16
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(88, 22)
+        Me.txtValor.Size = New System.Drawing.Size(90, 22)
         Me.txtValor.TabIndex = 156
         '
         'txtQuantidade
@@ -468,6 +472,8 @@ Partial Class frmProdutos
         'Cadastro
         '
         Me.Cadastro.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Cadastro.Controls.Add(Me.txtVlr)
+        Me.Cadastro.Controls.Add(Me.txtVlrCompra)
         Me.Cadastro.Controls.Add(Me.Label13)
         Me.Cadastro.Controls.Add(Me.cbUnidade)
         Me.Cadastro.Controls.Add(Me.Label12)
@@ -578,6 +584,24 @@ Partial Class frmProdutos
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'txtVlrCompra
+        '
+        Me.txtVlrCompra.Enabled = False
+        Me.txtVlrCompra.Location = New System.Drawing.Point(688, 34)
+        Me.txtVlrCompra.Name = "txtVlrCompra"
+        Me.txtVlrCompra.ReadOnly = True
+        Me.txtVlrCompra.Size = New System.Drawing.Size(90, 22)
+        Me.txtVlrCompra.TabIndex = 193
+        '
+        'txtVlr
+        '
+        Me.txtVlr.Enabled = False
+        Me.txtVlr.Location = New System.Drawing.Point(688, 83)
+        Me.txtVlr.Name = "txtVlr"
+        Me.txtVlr.ReadOnly = True
+        Me.txtVlr.Size = New System.Drawing.Size(90, 22)
+        Me.txtVlr.TabIndex = 194
+        '
         'frmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -651,4 +675,6 @@ Partial Class frmProdutos
     Friend WithEvents Label10 As Label
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents Label13 As Label
+    Friend WithEvents txtVlr As TextBox
+    Friend WithEvents txtVlrCompra As TextBox
 End Class

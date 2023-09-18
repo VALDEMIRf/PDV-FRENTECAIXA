@@ -22,6 +22,7 @@ Partial Class frmFuncionarios
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFuncionarios))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbCPF = New System.Windows.Forms.RadioButton()
@@ -62,17 +63,12 @@ Partial Class frmFuncionarios
         Me.txtdtDemissao = New System.Windows.Forms.MaskedTextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.dtData = New System.Windows.Forms.MaskedTextBox()
-        Me.btImagem = New System.Windows.Forms.Button()
-        Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.btSair = New System.Windows.Forms.Button()
-        Me.btnExcluir = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnNovo = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txtComplemento = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.txtCEP = New System.Windows.Forms.MaskedTextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtUF = New System.Windows.Forms.ComboBox()
@@ -81,18 +77,25 @@ Partial Class frmFuncionarios
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
         Me.Consulta = New System.Windows.Forms.TabPage()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btBuscarCEP = New System.Windows.Forms.Button()
-        Me.txtComplemento = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.pbImagem = New System.Windows.Forms.PictureBox()
+        Me.btImagem = New System.Windows.Forms.Button()
+        Me.btnNovo = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
         Me.Consulta.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -360,11 +363,9 @@ Partial Class frmFuncionarios
         '
         'txtCompl
         '
-        Me.txtCompl.Enabled = False
-        Me.txtCompl.Location = New System.Drawing.Point(250, 91)
+        Me.txtCompl.Location = New System.Drawing.Point(298, 91)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCompl.Name = "txtCompl"
-        Me.txtCompl.ReadOnly = True
         Me.txtCompl.Size = New System.Drawing.Size(225, 23)
         Me.txtCompl.TabIndex = 10
         '
@@ -374,9 +375,9 @@ Partial Class frmFuncionarios
         Me.Label13.Location = New System.Drawing.Point(187, 93)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(55, 17)
+        Me.Label13.Size = New System.Drawing.Size(106, 17)
         Me.Label13.TabIndex = 85
-        Me.Label13.Text = "Compl.:"
+        Me.Label13.Text = "Complemento2:"
         '
         'txtBairro
         '
@@ -498,29 +499,6 @@ Partial Class frmFuncionarios
         Me.dtData.Size = New System.Drawing.Size(70, 20)
         Me.dtData.TabIndex = 16
         '
-        'btImagem
-        '
-        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btImagem.FlatAppearance.BorderSize = 0
-        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(986, 175)
-        Me.btImagem.Name = "btImagem"
-        Me.btImagem.Size = New System.Drawing.Size(37, 26)
-        Me.btImagem.TabIndex = 104
-        Me.btImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btImagem.UseVisualStyleBackColor = True
-        '
-        'pbImagem
-        '
-        Me.pbImagem.Image = Global.PDV.My.Resources.Resources.imagesemfoto
-        Me.pbImagem.Location = New System.Drawing.Point(878, 9)
-        Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(162, 160)
-        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbImagem.TabIndex = 110
-        Me.pbImagem.TabStop = False
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -560,111 +538,6 @@ Partial Class frmFuncionarios
         Me.dg.Size = New System.Drawing.Size(1022, 263)
         Me.dg.TabIndex = 113
         '
-        'btSair
-        '
-        Me.btSair.BackColor = System.Drawing.Color.Transparent
-        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSair.FlatAppearance.BorderSize = 0
-        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSair.ForeColor = System.Drawing.Color.Black
-        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(358, 16)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(4)
-        Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(81, 37)
-        Me.btSair.TabIndex = 118
-        Me.btSair.Text = "Sair"
-        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSair.UseVisualStyleBackColor = False
-        '
-        'btnExcluir
-        '
-        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExcluir.FlatAppearance.BorderSize = 0
-        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.ForeColor = System.Drawing.Color.Black
-        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(266, 17)
-        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
-        Me.btnExcluir.TabIndex = 117
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExcluir.UseVisualStyleBackColor = False
-        '
-        'btnEditar
-        '
-        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEditar.FlatAppearance.BorderSize = 0
-        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.ForeColor = System.Drawing.Color.Black
-        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Location = New System.Drawing.Point(180, 17)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(83, 37)
-        Me.btnEditar.TabIndex = 116
-        Me.btnEditar.Text = "Editar"
-        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEditar.UseVisualStyleBackColor = False
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalvar.FlatAppearance.BorderSize = 0
-        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalvar.ForeColor = System.Drawing.Color.Black
-        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(92, 16)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
-        Me.btnSalvar.TabIndex = 115
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSalvar.UseVisualStyleBackColor = False
-        '
-        'btnNovo
-        '
-        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNovo.FlatAppearance.BorderSize = 0
-        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
-        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNovo.ForeColor = System.Drawing.Color.Black
-        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
-        Me.btnNovo.Location = New System.Drawing.Point(7, 15)
-        Me.btnNovo.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnNovo.Name = "btnNovo"
-        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
-        Me.btnNovo.TabIndex = 114
-        Me.btnNovo.Text = "Novo"
-        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNovo.UseVisualStyleBackColor = False
-        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.txtComplemento)
@@ -692,6 +565,24 @@ Partial Class frmFuncionarios
         Me.GroupBox5.TabIndex = 119
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Dados do Endereço"
+        '
+        'txtComplemento
+        '
+        Me.txtComplemento.Location = New System.Drawing.Point(545, 67)
+        Me.txtComplemento.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtComplemento.Name = "txtComplemento"
+        Me.txtComplemento.Size = New System.Drawing.Size(198, 23)
+        Me.txtComplemento.TabIndex = 121
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(482, 69)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(55, 17)
+        Me.Label21.TabIndex = 122
+        Me.Label21.Text = "Compl.:"
         '
         'txtCEP
         '
@@ -794,6 +685,10 @@ Partial Class frmFuncionarios
         Me.Consulta.TabIndex = 1
         Me.Consulta.Text = "Consulta"
         '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'btBuscarCEP
         '
         Me.btBuscarCEP.Cursor = System.Windows.Forms.Cursors.Hand
@@ -807,25 +702,134 @@ Partial Class frmFuncionarios
         Me.btBuscarCEP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btBuscarCEP.UseVisualStyleBackColor = True
         '
-        'txtComplemento
+        'pbImagem
         '
-        Me.txtComplemento.Enabled = False
-        Me.txtComplemento.Location = New System.Drawing.Point(545, 67)
-        Me.txtComplemento.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtComplemento.Name = "txtComplemento"
-        Me.txtComplemento.ReadOnly = True
-        Me.txtComplemento.Size = New System.Drawing.Size(198, 23)
-        Me.txtComplemento.TabIndex = 121
+        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pbImagem.Image = Global.PDV.My.Resources.Resources.sem_rosto
+        Me.pbImagem.Location = New System.Drawing.Point(850, 9)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(185, 171)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 110
+        Me.pbImagem.TabStop = False
         '
-        'Label21
+        'btImagem
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(482, 69)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(55, 17)
-        Me.Label21.TabIndex = 122
-        Me.Label21.Text = "Compl.:"
+        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btImagem.FlatAppearance.BorderSize = 0
+        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
+        Me.btImagem.Location = New System.Drawing.Point(989, 186)
+        Me.btImagem.Name = "btImagem"
+        Me.btImagem.Size = New System.Drawing.Size(37, 26)
+        Me.btImagem.TabIndex = 104
+        Me.btImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btImagem.UseVisualStyleBackColor = True
+        '
+        'btnNovo
+        '
+        Me.btnNovo.BackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNovo.FlatAppearance.BorderSize = 0
+        Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNovo.ForeColor = System.Drawing.Color.Black
+        Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
+        Me.btnNovo.Location = New System.Drawing.Point(7, 15)
+        Me.btnNovo.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnNovo.Name = "btnNovo"
+        Me.btnNovo.Size = New System.Drawing.Size(81, 37)
+        Me.btnNovo.TabIndex = 114
+        Me.btnNovo.Text = "Novo"
+        Me.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNovo.UseVisualStyleBackColor = False
+        '
+        'btnSalvar
+        '
+        Me.btnSalvar.BackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalvar.FlatAppearance.BorderSize = 0
+        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
+        Me.btnSalvar.Location = New System.Drawing.Point(92, 16)
+        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
+        Me.btnSalvar.TabIndex = 115
+        Me.btnSalvar.Text = "Salvar"
+        Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSalvar.UseVisualStyleBackColor = False
+        '
+        'btSair
+        '
+        Me.btSair.BackColor = System.Drawing.Color.Transparent
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSair.ForeColor = System.Drawing.Color.Black
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(358, 16)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(4)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(81, 37)
+        Me.btSair.TabIndex = 118
+        Me.btSair.Text = "Sair"
+        Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSair.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditar.FlatAppearance.BorderSize = 0
+        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.Black
+        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
+        Me.btnEditar.Location = New System.Drawing.Point(180, 17)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(83, 37)
+        Me.btnEditar.TabIndex = 116
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEditar.UseVisualStyleBackColor = False
+        '
+        'btnExcluir
+        '
+        Me.btnExcluir.BackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExcluir.FlatAppearance.BorderSize = 0
+        Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
+        Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExcluir.ForeColor = System.Drawing.Color.Black
+        Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
+        Me.btnExcluir.Location = New System.Drawing.Point(266, 17)
+        Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExcluir.Name = "btnExcluir"
+        Me.btnExcluir.Size = New System.Drawing.Size(87, 37)
+        Me.btnExcluir.TabIndex = 117
+        Me.btnExcluir.Text = "Excluir"
+        Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'frmFuncionarios
         '
@@ -847,7 +851,6 @@ Partial Class frmFuncionarios
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
@@ -857,6 +860,8 @@ Partial Class frmFuncionarios
         Me.Cadastro.PerformLayout()
         Me.Consulta.ResumeLayout(False)
         Me.Consulta.PerformLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -922,4 +927,5 @@ Partial Class frmFuncionarios
     Friend WithEvents btBuscarCEP As Button
     Friend WithEvents txtComplemento As TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents errErro As ErrorProvider
 End Class

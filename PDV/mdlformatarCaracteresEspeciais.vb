@@ -13,4 +13,6 @@ Module mdlformatarCaracteresEspeciais
 
         UTF8_to_ISO = textoISO
     End Function
+
+
 End Module

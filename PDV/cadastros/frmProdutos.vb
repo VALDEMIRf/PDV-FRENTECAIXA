@@ -155,6 +155,7 @@ Public Class frmProdutos
         cbUnidade.Text = Nothing
         cbCategoria.Text = Nothing
         txtCodBarras.Text = ""
+        imgCodBar.Image = Nothing
         carregarImagem()
 
     End Sub
@@ -228,6 +229,11 @@ Public Class frmProdutos
         btnSalvar.Enabled = True
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
+        txtVlrCompra.Visible = False
+        txtVlr.Visible = False
+        txtValorCompra.Visible = True
+        txtValor.Visible = True
+
         ' pbImagem.Visible = False
         'carregarImagem()
         '  CriarCodigoBarras()
@@ -252,6 +258,8 @@ Public Class frmProdutos
                 ImagemCarregada.Save(MS, System.Drawing.Imaging.ImageFormat.Jpeg)
                 Dim byteArray = MS.ToArray
 
+                Dim vlcompra = Replace(txtValorCompra.Text, ",", ".")
+                Dim vlVenda = Replace(txtValor.Text, ",", ".")
 
                 abrir()
                 cmd = New SqlCommand("pa_produtoSalvar", con)
@@ -259,8 +267,8 @@ Public Class frmProdutos
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
                 cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text)
                 cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text)
-                cmd.Parameters.AddWithValue("@valor_compra", txtValorCompra.Text)
-                cmd.Parameters.AddWithValue("@valor_venda", txtValor.Text)
+                cmd.Parameters.AddWithValue("@valor_compra", vlcompra)
+                cmd.Parameters.AddWithValue("@valor_venda", vlVenda)
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
                 cmd.Parameters.AddWithValue("@nivel_minimo", txtNivel.Text)
@@ -278,6 +286,7 @@ Public Class frmProdutos
 
                 ' PrintPreviewDialog1.Show()
 
+
                 Listar()
                 Limpar()
 
@@ -285,7 +294,9 @@ Public Class frmProdutos
 
             Catch ex As Exception
                 MessageBox.Show("Erro ao salvar os dados" + ex.Message.ToString)
+            Finally
                 fechar()
+
             End Try
         End If
     End Sub
@@ -372,6 +383,12 @@ Public Class frmProdutos
         btnEditar.Enabled = True
         btnExcluir.Enabled = True
         btnSalvar.Enabled = False
+
+        txtVlrCompra.Visible = True
+        txtVlr.Visible = True
+        txtValorCompra.Visible = False
+        txtValor.Visible = False
+
         HabilitarCampos()
 
         'dg.Columns("nivel_minimo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -384,8 +401,8 @@ Public Class frmProdutos
         cbFornecedor.Text = dg.CurrentRow.Cells(13).Value
         cbUnidade.Text = dg.CurrentRow.Cells(4).Value
         txtQuantidade.Text = dg.CurrentRow.Cells(3).Value
-        txtValorCompra.Text = CInt(dg.CurrentRow.Cells(6).Value)
-        txtValor.Text = CInt(dg.CurrentRow.Cells(7).Value)
+        txtVlrCompra.Text = CInt(dg.CurrentRow.Cells(6).Value).ToString("R$ #,###.00")
+        txtVlr.Text = CInt(dg.CurrentRow.Cells(7).Value).ToString("R$ #,###.00")
         txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
         txtNivel.Text = CInt(dg.CurrentRow.Cells(10).Value)
         txtQuantidade.Text = CInt(dg.CurrentRow.Cells(5).Value)
@@ -503,5 +520,45 @@ Public Class frmProdutos
 
     Private Sub txtCodBarras_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarras.TextChanged
         CriarCodigoBarras()
+    End Sub
+
+    Private Sub txtValorCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValorCompra.KeyPress
+        Select Case (txtValorCompra.TextLength)
+            Case 4
+                txtValorCompra.SelectionStart = 5
+        End Select
+    End Sub
+
+
+
+    Public Shared Sub Moeda(ByRef txt As TextBox)
+        Dim n As String = String.Empty
+        Dim v As Double = 0
+        Try
+            n = txt.Text.Replace(",", "").Replace(".", "")
+            If n.Equals("") Then n = ""
+            n = n.PadLeft(3, "0")
+            If n.Length > 3 And n.Substring(0, 1) = "0" Then n = n.Substring(1, n.Length - 1)
+            v = Convert.ToDouble(n) / 100
+            txt.Text = String.Format("{0:N}", v)
+            txt.SelectionStart = txt.Text.Length
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub txtValorCompra_TextChanged(sender As Object, e As EventArgs) Handles txtValorCompra.TextChanged
+        frmProdutos.Moeda(txtValorCompra)
+    End Sub
+
+    Private Sub txtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged
+        frmProdutos.Moeda(txtValor)
+    End Sub
+
+    Private Sub txtValor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValor.KeyPress
+        Select Case (txtValor.TextLength)
+            Case 4
+                txtValor.SelectionStart = 5
+        End Select
     End Sub
 End Class

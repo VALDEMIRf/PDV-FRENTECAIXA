@@ -1,7 +1,7 @@
 ﻿
 Imports System.Data.SqlClient
 Imports System.IO
-
+Imports iTextSharp.text.pdf
 
 Public Class frmFuncionarios
 
@@ -29,6 +29,11 @@ Public Class frmFuncionarios
         btnExcluir.Enabled = False
         rbNome.Checked = True
     End Sub
+
+    Private Sub frmFuncionarios_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        '  carregarImagem()
+    End Sub
+
     Private Sub DesabilitarCampos()
         txtNome.Enabled = False
         cbSexo.Enabled = False
@@ -37,12 +42,7 @@ Public Class frmFuncionarios
         txtTel.Enabled = False
         txtEmail.Enabled = False
         txtdtNasc.Enabled = False
-        txtEndereco.Enabled = False
-        txtNumero.Enabled = False
         txtCompl.Enabled = False
-        txtBairro.Enabled = False
-        txtCidade.Enabled = False
-        txtUF.Enabled = False
         txtCEP.Enabled = False
         cbCargo.Enabled = False
         cbTurno.Enabled = False
@@ -61,7 +61,8 @@ Public Class frmFuncionarios
         txtdtNasc.Enabled = True
         'txtEndereco.Enabled = True
         txtNumero.Enabled = True
-        '  txtCompl.Enabled = True
+        txtCompl.Enabled = True
+        txtComplemento.Enabled = True
         '  txtBairro.Enabled = True
         '  txtCidade.Enabled = True
         ' txtUF.Enabled = True
@@ -84,6 +85,7 @@ Public Class frmFuncionarios
         txtEndereco.Text = ""
         txtNumero.Text = ""
         txtCompl.Text = ""
+        txtComplemento.Text = ""
         txtBairro.Text = ""
         txtCidade.Text = ""
         txtUF.Text = Nothing
@@ -93,6 +95,7 @@ Public Class frmFuncionarios
         dtData.Text = ""
         txtdtDemissao.Text = ""
         txtBuscar.Text = ""
+        ' pbImagem.Image = Nothing
 
         ' carregarImagem()
     End Sub
@@ -111,6 +114,14 @@ Public Class frmFuncionarios
 
         If txtCPF.Text <> "" And txtNome.Text <> "" Then
 
+            If pbImagem.Image.Equals(Nothing) Then
+                errErro.SetError(pbImagem, "Escolha uma imagem")
+                Exit Sub
+            Else
+                '  pbImagem.Image = My.Resources.sem_rosto
+            End If
+
+
             Try
 
                 'CARREGANDO IMAGEM NO BANCO
@@ -128,18 +139,21 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
                 cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@complemento2", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
-                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
-                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue) 'cbCliente.SelectedValue
+                cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
                 cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
                 cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
                 cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
+
+
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -182,13 +196,14 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
                 cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@complemento2", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
-                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
                 cmd.Parameters.AddWithValue("@idCargo", cbCargo.SelectedValue)
                 cmd.Parameters.AddWithValue("@turno", cbTurno.Text)
                 cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
@@ -246,6 +261,7 @@ Public Class frmFuncionarios
     End Sub
 
     Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
+        pbImagem.Visible = True
         Using OFD As New OpenFileDialog With {.Filter = "Image File(*.jpg;*.bmp;*.gif;*.png)|*.jpg;*.bmp;*.gif;*.png"}
 
             If OFD.ShowDialog = DialogResult.OK Then
@@ -319,7 +335,7 @@ Public Class frmFuncionarios
         dg.Columns(0).Visible = False
         dg.Columns(3).Visible = False
         dg.Columns(4).Visible = False
-        dg.Columns(19).Visible = False
+        dg.Columns(20).Visible = False
 
         dg.Columns(1).HeaderText = "Nome"
         dg.Columns(2).HeaderText = "Sexo"
@@ -328,30 +344,31 @@ Public Class frmFuncionarios
         dg.Columns(5).HeaderText = "Telefone"
         dg.Columns(6).HeaderText = "Email"
         dg.Columns(7).HeaderText = "dtNasc"
-        dg.Columns(8).HeaderText = "Endereço"
-        dg.Columns(9).HeaderText = "Num"
-        dg.Columns(10).HeaderText = "Compl"
-        dg.Columns(11).HeaderText = "Bairro"
-        dg.Columns(12).HeaderText = "Cidade"
-        dg.Columns(13).HeaderText = "UF"
-        dg.Columns(14).HeaderText = "CEP"
-        dg.Columns(15).HeaderText = "Cargo"
-        dg.Columns(16).HeaderText = "Turno"
-        dg.Columns(17).HeaderText = "Dt Contratação"
-        dg.Columns(18).HeaderText = "Dt Demissão"
-        dg.Columns(19).HeaderText = "Imagem"
+        dg.Columns(8).HeaderText = "CEP"
+        dg.Columns(9).HeaderText = "UF"
+        dg.Columns(10).HeaderText = "Endereço"
+        dg.Columns(11).HeaderText = "Num"
+        dg.Columns(12).HeaderText = "Compl"
+        dg.Columns(13).HeaderText = "Compl2"
+        dg.Columns(14).HeaderText = "Bairro"
+        dg.Columns(15).HeaderText = "Cidade"
+        dg.Columns(16).HeaderText = "Cargo"
+        dg.Columns(17).HeaderText = "Turno"
+        dg.Columns(18).HeaderText = "Dt Contratação"
+        dg.Columns(19).HeaderText = "Dt Demissão"
+        dg.Columns(20).HeaderText = "Imagem"
 
         dg.Columns(5).Width = 130
         dg.Columns(6).Width = 180
-        dg.Columns(8).Width = 150
-        dg.Columns(9).Width = 50
-        dg.Columns(10).Width = 120
-        dg.Columns(11).Width = 180
+        dg.Columns(8).Width = 65
+        dg.Columns(9).Width = 30
+        dg.Columns(10).Width = 150
+        dg.Columns(11).Width = 45
         dg.Columns(12).Width = 180
-        dg.Columns(13).Width = 40
-        dg.Columns(14).Width = 75
-        dg.Columns(15).Width = 120
-        dg.Columns(16).Width = 60
+        dg.Columns(13).Width = 150
+        dg.Columns(14).Width = 150
+        dg.Columns(15).Width = 150
+        dg.Columns(16).Width = 65
 
     End Sub
 
@@ -363,29 +380,29 @@ Public Class frmFuncionarios
 
     Sub carregarImagem()
 
-        ' Try
 
-        'Dim img As String = "https://www.buritama.sp.leg.br/imagens/parlamentares-2013-2016/sem-foto.jpg/image"
-        'Dim req As System.Net.HttpWebRequest
-        'Dim resp As System.Net.HttpWebResponse
-        '' req = Net.WebRequest.Create(img)
-        'req = req.Create(img)
-        'resp = req.GetResponse
-
-        'ImagemCarregada = New Bitmap(resp.GetResponseStream)
-        'pbImagem.Image = ImagemCarregada
-        'req.Abort()
+        Dim img As String = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F24157424-sem-rosto-desenho-animado-jovem-garoto-preto-fino-linha-arte-icone&psig=AOvVaw3EIhBcNzAfz17XXVBkf3jj&ust=1695000675916000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKC72JLAsIEDFQAAAAAdAAAAABAO"
 
 
-        ' ImagemCarregada = Image.FromFile("C:\Users\valde\OneDrive\Documentos\Visual Studio 2017\Projetos\PDV\PDV\imagens\imagesemfoto.jpg")
+        Try
+            Dim req As System.Net.HttpWebRequest
+            Dim resp As System.Net.HttpWebResponse
+            req = Net.WebRequest.Create(img)
+            req = req.Create(img)
+
+            resp = req.GetResponse
+
+            ImagemCarregada = New Bitmap(resp.GetResponseStream)
+            pbImagem.Image = ImagemCarregada
+            req.Abort()
+        Catch ex As Exception
+            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
+        Finally
+
+        End Try
+        ' Dim img As String = My.Resources.imagesemfoto
 
 
-        '  '  ImagemCarregada = Image.FromFile(\ imaagens \ imagesemfoto.jpg)
-        ' pbImagem.Image = ImagemCarregada
-
-        ' Catch ex As Exception
-        ' MsgBox("<< Erro ao ler a imagem >> " & ex.Message.ToString)
-        ' End Try
 
     End Sub
 
@@ -461,19 +478,20 @@ Public Class frmFuncionarios
         txtTel.Text = dg.CurrentRow.Cells(5).Value
         txtEmail.Text = dg.CurrentRow.Cells(6).Value
         txtdtNasc.Text = dg.CurrentRow.Cells(7).Value
-        txtEndereco.Text = dg.CurrentRow.Cells(8).Value
-        txtNumero.Text = dg.CurrentRow.Cells(9).Value
-        txtCompl.Text = dg.CurrentRow.Cells(10).Value
-        txtBairro.Text = dg.CurrentRow.Cells(11).Value
-        txtCidade.Text = dg.CurrentRow.Cells(12).Value
-        txtUF.Text = dg.CurrentRow.Cells(13).Value
-        txtCEP.Text = dg.CurrentRow.Cells(14).Value
-        cbCargo.Text = dg.CurrentRow.Cells(15).Value
-        cbTurno.Text = dg.CurrentRow.Cells(16).Value
-        dtData.Text = dg.CurrentRow.Cells(17).Value
-        txtdtDemissao.Text = dg.CurrentRow.Cells(18).Value
+        txtCEP.Text = dg.CurrentRow.Cells(8).Value
+        txtUF.Text = dg.CurrentRow.Cells(9).Value
+        txtEndereco.Text = dg.CurrentRow.Cells(10).Value
+        txtNumero.Text = dg.CurrentRow.Cells(11).Value
+        txtCompl.Text = dg.CurrentRow.Cells(12).Value
+        txtComplemento.Text = dg.CurrentRow.Cells(13).Value
+        txtBairro.Text = dg.CurrentRow.Cells(14).Value
+        txtCidade.Text = dg.CurrentRow.Cells(15).Value
+        cbCargo.Text = dg.CurrentRow.Cells(16).Value
+        cbTurno.Text = dg.CurrentRow.Cells(17).Value
+        dtData.Text = dg.CurrentRow.Cells(18).Value
+        txtdtDemissao.Text = dg.CurrentRow.Cells(19).Value
 
-        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(19).Value, Byte())
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(20).Value, Byte())
         If tempImagem Is Nothing Then
             MessageBox.Show("Imagem não localizada", "Erro")
             Exit Sub
@@ -498,7 +516,9 @@ Public Class frmFuncionarios
             txtUF.Text = resposta.uf
 
         Catch ex As Exception
-            MsgBox("Erro ao buscar CEP.!" & vbNewLine & vbNewLine & ex.Message.ToString, vbCritical)
+            MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
         End Try
     End Sub
+
+
 End Class
