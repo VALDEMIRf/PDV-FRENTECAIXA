@@ -24,7 +24,7 @@ Public Class frmServicos
         mktDtEntrada.Enabled = False
         txtEndereco.Enabled = False
         txtNumero.Enabled = False
-        txtCompl.Enabled = False
+        txtComplemento.Enabled = False
         txtBairro.Enabled = False
         txtCidade.Enabled = False
         txtUF.Enabled = False
@@ -49,7 +49,7 @@ Public Class frmServicos
         mktDtEntrada.Enabled = True
         txtEndereco.Enabled = True
         txtNumero.Enabled = True
-        txtCompl.Enabled = True
+        txtComplemento.Enabled = True
         txtBairro.Enabled = True
         txtCidade.Enabled = True
         txtUF.Enabled = True
@@ -74,7 +74,7 @@ Public Class frmServicos
         mktDtEntrada.Text = ""
         txtEndereco.Text = ""
         txtNumero.Text = ""
-        txtCompl.Text = ""
+        txtComplemento.Text = ""
         txtBairro.Text = ""
         txtCidade.Text = ""
         txtUF.Text = Nothing
@@ -239,7 +239,7 @@ Public Class frmServicos
                 cmd.Parameters.AddWithValue("@dtEntrada", mktDtEntrada.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
-                cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@compl", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
                 cmd.Parameters.AddWithValue("@UF", txtUF.Text)
@@ -288,7 +288,7 @@ Public Class frmServicos
                 cmd.Parameters.AddWithValue("@dtEntrada", mktDtEntrada.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
-                cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
+                cmd.Parameters.AddWithValue("@compl", txtComplemento.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
                 cmd.Parameters.AddWithValue("@uf", txtUF.Text)
@@ -375,7 +375,7 @@ Public Class frmServicos
         mktDtEntrada.Text = dgvServico.CurrentRow.Cells(3).Value
         txtEndereco.Text = dgvServico.CurrentRow.Cells(4).Value
         txtNumero.Text = dgvServico.CurrentRow.Cells(5).Value
-        txtCompl.Text = dgvServico.CurrentRow.Cells(6).Value
+        txtComplemento.Text = dgvServico.CurrentRow.Cells(6).Value
         txtBairro.Text = dgvServico.CurrentRow.Cells(7).Value
         txtCidade.Text = dgvServico.CurrentRow.Cells(8).Value
         txtUF.Text = dgvServico.CurrentRow.Cells(9).Value
@@ -458,5 +458,47 @@ Public Class frmServicos
         '    MessageBox.Show("Erro ao Listar" + ex.Message)
         '    fechar()
         'End Try
+    End Sub
+
+    Private Sub txtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged
+        frmServicos.Moeda(txtValor)
+    End Sub
+
+    Private Sub txtValor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValor.KeyPress
+        Select Case (txtValor.TextLength)
+            Case 4
+                txtValor.SelectionStart = 5
+        End Select
+    End Sub
+
+    Public Shared Sub Moeda(ByRef txt As TextBox)
+        Dim n As String = String.Empty
+        Dim v As Double = 0
+        Try
+            n = txt.Text.Replace(",", "").Replace(".", "")
+            If n.Equals("") Then n = ""
+            n = n.PadLeft(3, "0")
+            If n.Length > 3 And n.Substring(0, 1) = "0" Then n = n.Substring(1, n.Length - 1)
+            v = Convert.ToDouble(n) / 100
+            txt.Text = String.Format("{0:N}", v)
+            txt.SelectionStart = txt.Text.Length
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
+        Try
+            Dim ws = New WSCEP.AtendeClienteClient()
+            Dim resposta = ws.consultaCEP(txtCEP.Text)
+            txtEndereco.Text = resposta.end
+            txtComplemento.Text = resposta.complemento2  'complemento
+            txtBairro.Text = resposta.bairro
+            txtCidade.Text = resposta.cidade
+            txtUF.Text = resposta.uf
+
+        Catch ex As Exception
+            MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
+        End Try
     End Sub
 End Class

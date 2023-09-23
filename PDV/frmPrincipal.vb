@@ -183,23 +183,12 @@ Public Class frmPrincipal
         form.ShowDialog()
     End Sub
 
-    Private Sub TipoDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeServiçoToolStripMenuItem.Click
-        Dim form = New frmTipoServico
-
-        form.ShowDialog()
-    End Sub
-
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         Dim form = New frmClientes
 
         form.ShowDialog()
     End Sub
 
-    Private Sub ServiçosPrestadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosPrestadosToolStripMenuItem.Click
-        Dim form = New frmServicos
-
-        form.ShowDialog()
-    End Sub
 
     Private Sub SairToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem1.Click
         Application.Exit()
@@ -570,6 +559,16 @@ Public Class frmPrincipal
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Dim form = New frmEmpresa
+        form.ShowDialog()
+    End Sub
+
+    Private Sub OrdemDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdemDeServiçoToolStripMenuItem.Click
+        Dim form = New frmServicos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub TiposDeServiçoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeServiçoToolStripMenuItem.Click
+        Dim form = New frmTipoServico
         form.ShowDialog()
     End Sub
 End Class

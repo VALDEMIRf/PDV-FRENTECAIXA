@@ -29,9 +29,6 @@ Partial Class frmPrincipal
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ServiçosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ServiçosPrestadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CargosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FornecedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProdutosToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,6 +58,10 @@ Partial Class frmPrincipal
         Me.TestesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.JsonReceitaFederalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormatarDataGridToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimentaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrdemDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposDeServiçoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrçamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.pbImagem = New System.Windows.Forms.PictureBox()
@@ -88,7 +89,7 @@ Partial Class frmPrincipal
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem, Me.TestesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.MovimentaçãoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem, Me.TestesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1180, 24)
@@ -97,7 +98,7 @@ Partial Class frmPrincipal
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.FuncionariosToolStripMenuItem, Me.ServiçosToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ProdutosToolStripMenuItem3, Me.ToolStripMenuItem1})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.FuncionariosToolStripMenuItem, Me.CargosToolStripMenuItem, Me.FornecedoresToolStripMenuItem, Me.ProdutosToolStripMenuItem3, Me.ToolStripMenuItem1})
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -116,26 +117,6 @@ Partial Class frmPrincipal
         Me.FuncionariosToolStripMenuItem.Name = "FuncionariosToolStripMenuItem"
         Me.FuncionariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FuncionariosToolStripMenuItem.Text = "Funcionarios"
-        '
-        'ServiçosToolStripMenuItem
-        '
-        Me.ServiçosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDeServiçoToolStripMenuItem, Me.ServiçosPrestadosToolStripMenuItem})
-        Me.ServiçosToolStripMenuItem.Image = CType(resources.GetObject("ServiçosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ServiçosToolStripMenuItem.Name = "ServiçosToolStripMenuItem"
-        Me.ServiçosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ServiçosToolStripMenuItem.Text = "Serviços"
-        '
-        'TipoDeServiçoToolStripMenuItem
-        '
-        Me.TipoDeServiçoToolStripMenuItem.Name = "TipoDeServiçoToolStripMenuItem"
-        Me.TipoDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.TipoDeServiçoToolStripMenuItem.Text = "Tipo de Serviço"
-        '
-        'ServiçosPrestadosToolStripMenuItem
-        '
-        Me.ServiçosPrestadosToolStripMenuItem.Name = "ServiçosPrestadosToolStripMenuItem"
-        Me.ServiçosPrestadosToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.ServiçosPrestadosToolStripMenuItem.Text = "Serviços Prestados"
         '
         'CargosToolStripMenuItem
         '
@@ -342,6 +323,32 @@ Partial Class frmPrincipal
         Me.FormatarDataGridToolStripMenuItem.Name = "FormatarDataGridToolStripMenuItem"
         Me.FormatarDataGridToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.FormatarDataGridToolStripMenuItem.Text = "Formatar Data Grid"
+        '
+        'MovimentaçãoToolStripMenuItem
+        '
+        Me.MovimentaçãoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdemDeServiçoToolStripMenuItem, Me.TiposDeServiçoToolStripMenuItem, Me.OrçamentoToolStripMenuItem})
+        Me.MovimentaçãoToolStripMenuItem.Name = "MovimentaçãoToolStripMenuItem"
+        Me.MovimentaçãoToolStripMenuItem.Size = New System.Drawing.Size(99, 20)
+        Me.MovimentaçãoToolStripMenuItem.Text = "Movimentação"
+        '
+        'OrdemDeServiçoToolStripMenuItem
+        '
+        Me.OrdemDeServiçoToolStripMenuItem.Image = CType(resources.GetObject("OrdemDeServiçoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OrdemDeServiçoToolStripMenuItem.Name = "OrdemDeServiçoToolStripMenuItem"
+        Me.OrdemDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OrdemDeServiçoToolStripMenuItem.Text = "Ordem de Serviço"
+        '
+        'TiposDeServiçoToolStripMenuItem
+        '
+        Me.TiposDeServiçoToolStripMenuItem.Name = "TiposDeServiçoToolStripMenuItem"
+        Me.TiposDeServiçoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TiposDeServiçoToolStripMenuItem.Text = "Tipos de Serviço"
+        '
+        'OrçamentoToolStripMenuItem
+        '
+        Me.OrçamentoToolStripMenuItem.Name = "OrçamentoToolStripMenuItem"
+        Me.OrçamentoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OrçamentoToolStripMenuItem.Text = "Orçamento"
         '
         'Timer1
         '
@@ -611,9 +618,6 @@ Partial Class frmPrincipal
     Friend WithEvents RelatóriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProdutosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ServiçosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TipoDeServiçoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ServiçosPrestadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CargosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListarVendasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem1 As ToolStripMenuItem
@@ -656,4 +660,8 @@ Partial Class frmPrincipal
     Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UnidadeDeMedidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents MovimentaçãoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrdemDeServiçoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TiposDeServiçoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrçamentoToolStripMenuItem As ToolStripMenuItem
 End Class

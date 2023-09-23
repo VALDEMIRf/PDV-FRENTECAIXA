@@ -12,7 +12,9 @@ Public Class frmClientes
         btnEditar.Enabled = False
         btnExcluir.Enabled = False
         rbNome.Checked = True
+
     End Sub
+
 
     Private Sub DesabilitarCampos()
         txtNome.Enabled = False
@@ -22,13 +24,16 @@ Public Class frmClientes
         txtTel.Enabled = False
         txtEmail.Enabled = False
         txtdtNasc.Enabled = False
-        txtEndereco.Enabled = False
-        txtNumero.Enabled = False
-        txtCompl.Enabled = False
-        txtBairro.Enabled = False
-        txtCidade.Enabled = False
-        txtUF.Enabled = False
-        txtCEP.Enabled = False
+        'txtEndereco.Enabled = False
+        'txtNumero.Enabled = False
+        'txtCompl.Enabled = False
+        'txtBairro.Enabled = False
+        'txtCidade.Enabled = False
+        'txtUF.Enabled = False
+        'txtCEP.Enabled = False
+        cbEstCivil.Enabled = False
+        txtTelCel.Enabled = False
+        txtNatural.Enabled = False
 
     End Sub
 
@@ -40,23 +45,28 @@ Public Class frmClientes
         txtTel.Enabled = True
         txtEmail.Enabled = True
         txtdtNasc.Enabled = True
-        txtEndereco.Enabled = True
-        txtNumero.Enabled = True
-        txtCompl.Enabled = True
-        txtBairro.Enabled = True
-        txtCidade.Enabled = True
-        txtUF.Enabled = True
-        txtCEP.Enabled = True
-
+        'txtEndereco.Enabled = True
+        'txtNumero.Enabled = True
+        'txtCompl.Enabled = True
+        'txtBairro.Enabled = True
+        'txtCidade.Enabled = True
+        'txtUF.Enabled = True
+        'txtCEP.Enabled = True
+        cbEstCivil.Enabled = True
+        txtTelCel.Enabled = True
+        txtNatural.Enabled = True
     End Sub
 
     Private Sub Limpar()
         txtNome.Focus()
         txtNome.Text = ""
         cbSexo.Text = Nothing
+        cbEstCivil.Text = Nothing
         txtRG.Text = ""
         txtCPF.Text = ""
         txtTel.Text = ""
+        txtTelCel.Text = ""
+        txtNatural.Text = ""
         txtEmail.Text = ""
         txtdtNasc.Text = ""
         txtEndereco.Text = ""
@@ -71,36 +81,43 @@ Public Class frmClientes
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
-        dg.Columns(3).Visible = False
+        'dg.Columns(3).Visible = False
 
 
         dg.Columns(1).HeaderText = "Nome"
-        dg.Columns(2).HeaderText = "Sexo"
+        dg.Columns(2).HeaderText = "CPF"
         dg.Columns(3).HeaderText = "RG"
-        dg.Columns(4).HeaderText = "CPF"
-        dg.Columns(5).HeaderText = "Telefone"
-        dg.Columns(6).HeaderText = "Email"
-        dg.Columns(7).HeaderText = "dtNasc"
-        dg.Columns(8).HeaderText = "Endereço"
-        dg.Columns(9).HeaderText = "Num"
-        dg.Columns(10).HeaderText = "Compl"
-        dg.Columns(11).HeaderText = "Bairro"
-        dg.Columns(12).HeaderText = "Cidade"
-        dg.Columns(13).HeaderText = "UF"
-        dg.Columns(14).HeaderText = "CEP"
+        dg.Columns(4).HeaderText = "Est. Civil"
+        dg.Columns(5).HeaderText = "Naturalidade"
+        dg.Columns(6).HeaderText = "Sexo"
+        dg.Columns(7).HeaderText = "Nascimento"
+        dg.Columns(8).HeaderText = "Telefone"
+        dg.Columns(9).HeaderText = "Celular"
+        dg.Columns(10).HeaderText = "Email"
+        dg.Columns(11).HeaderText = "CEP"
+        dg.Columns(12).HeaderText = "UF"
+        dg.Columns(13).HeaderText = "Endereço"
+        dg.Columns(14).HeaderText = "Num"
+        dg.Columns(15).HeaderText = "Compl"
+        dg.Columns(16).HeaderText = "Bairro"
+        dg.Columns(17).HeaderText = "Cidade"
+        dg.Columns(18).HeaderText = "Data Cadastro"
 
-        dg.Columns(15).HeaderText = "Data Cadastro"
-
-        dg.Columns(5).Width = 130
-        dg.Columns(6).Width = 180
-        dg.Columns(8).Width = 200
-        dg.Columns(9).Width = 50
-        dg.Columns(10).Width = 150
-        dg.Columns(11).Width = 200
-        dg.Columns(12).Width = 200
-        dg.Columns(13).Width = 40
+        dg.Columns(1).Width = 150
+        dg.Columns(2).Width = 110
+        dg.Columns(5).Width = 100
+        dg.Columns(6).Width = 80
+        dg.Columns(7).Width = 110
+        dg.Columns(8).Width = 120
+        dg.Columns(9).Width = 120
+        dg.Columns(10).Width = 200
+        dg.Columns(11).Width = 80
+        dg.Columns(12).Width = 30
+        dg.Columns(13).Width = 140
         dg.Columns(14).Width = 75
-        dg.Columns(15).Width = 120
+        dg.Columns(15).Width = 150
+        dg.Columns(16).Width = 150
+        dg.Columns(17).Width = 150
 
     End Sub
 
@@ -118,7 +135,7 @@ Public Class frmClientes
         Try
             abrir()
             da = New SqlDataAdapter("pa_cliente_listar", con)
-            'da = New SqlDataAdapter("SELECT * FROM tbFuncionarios", con)txtdtNasc.text
+
             da.Fill(dt)
             dg.DataSource = dt
 
@@ -227,20 +244,22 @@ Public Class frmClientes
                 cmd = New SqlCommand("pa_clienteSalvar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
-                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
                 cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
+                cmd.Parameters.AddWithValue("@estadoCivil", cbEstCivil.Text)
+                cmd.Parameters.AddWithValue("@naturalidade", txtNatural.Text)
+                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@telRes", txtTel.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtTelCel.Text)
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
                 cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
-                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
-
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -270,20 +289,22 @@ Public Class frmClientes
                 cmd = New SqlCommand("pa_clienteEditar", con)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text)
-                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
-                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
                 cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
-                cmd.Parameters.AddWithValue("@telcel", txtTel.Text)
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@rg", txtRG.Text)
+                cmd.Parameters.AddWithValue("@estadoCivil", cbEstCivil.Text)
+                cmd.Parameters.AddWithValue("@naturalidade", txtNatural.Text)
+                cmd.Parameters.AddWithValue("@sexo", cbSexo.Text)
                 cmd.Parameters.AddWithValue("@dtNasc", txtdtNasc.Text)
+                cmd.Parameters.AddWithValue("@telRes", txtTel.Text)
+                cmd.Parameters.AddWithValue("@telcel", txtTelCel.Text)
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
+                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
                 cmd.Parameters.AddWithValue("@num", txtNumero.Text)
                 cmd.Parameters.AddWithValue("@compl", txtCompl.Text)
                 cmd.Parameters.AddWithValue("@bairro", txtBairro.Text)
                 cmd.Parameters.AddWithValue("@cidade", txtCidade.Text)
-                cmd.Parameters.AddWithValue("@UF", txtUF.Text)
-                cmd.Parameters.AddWithValue("@cep", txtCEP.Text)
-
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -344,20 +365,38 @@ Public Class frmClientes
         txtCPF.Enabled = False
 
         txtNome.Text = dg.CurrentRow.Cells(1).Value
-        cbSexo.Text = dg.CurrentRow.Cells(2).Value
+        txtCPF.Text = dg.CurrentRow.Cells(2).Value
         txtRG.Text = dg.CurrentRow.Cells(3).Value
-        txtCPF.Text = dg.CurrentRow.Cells(4).Value
-        txtTel.Text = dg.CurrentRow.Cells(5).Value
-        txtEmail.Text = dg.CurrentRow.Cells(6).Value
+        cbEstCivil.Text = dg.CurrentRow.Cells(4).Value
+        txtNatural.Text = dg.CurrentRow.Cells(5).Value
+        cbSexo.Text = dg.CurrentRow.Cells(6).Value
         txtdtNasc.Text = dg.CurrentRow.Cells(7).Value
-        txtEndereco.Text = dg.CurrentRow.Cells(8).Value
-        txtNumero.Text = dg.CurrentRow.Cells(9).Value
-        txtCompl.Text = dg.CurrentRow.Cells(10).Value
-        txtBairro.Text = dg.CurrentRow.Cells(11).Value
-        txtCidade.Text = dg.CurrentRow.Cells(12).Value
-        txtUF.Text = dg.CurrentRow.Cells(13).Value
-        txtCEP.Text = dg.CurrentRow.Cells(14).Value
+        txtTel.Text = dg.CurrentRow.Cells(8).Value
+        txtTelCel.Text = dg.CurrentRow.Cells(9).Value
+        txtEmail.Text = dg.CurrentRow.Cells(10).Value
+        txtCEP.Text = dg.CurrentRow.Cells(11).Value
+        txtUF.Text = dg.CurrentRow.Cells(12).Value
+        txtEndereco.Text = dg.CurrentRow.Cells(13).Value
+        txtNumero.Text = dg.CurrentRow.Cells(14).Value
+        txtCompl.Text = dg.CurrentRow.Cells(15).Value
+        txtBairro.Text = dg.CurrentRow.Cells(16).Value
+        txtCidade.Text = dg.CurrentRow.Cells(17).Value
+
+
     End Sub
 
+    Private Sub btBuscarCEP_Click(sender As Object, e As EventArgs) Handles btBuscarCEP.Click
+        Try
+            Dim ws = New WSCEP.AtendeClienteClient()
+            Dim resposta = ws.consultaCEP(txtCEP.Text)
+            txtEndereco.Text = resposta.end
+            ' txtCompl.Text = resposta.complemento2  'complemento
+            txtBairro.Text = resposta.bairro
+            txtCidade.Text = resposta.cidade
+            txtUF.Text = resposta.uf
 
+        Catch ex As Exception
+            MsgBox("Erro ao buscar CEP.!" & ex.Message.ToString, vbCritical)
+        End Try
+    End Sub
 End Class

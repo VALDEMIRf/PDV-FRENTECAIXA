@@ -529,8 +529,6 @@ Public Class frmProdutos
         End Select
     End Sub
 
-
-
     Public Shared Sub Moeda(ByRef txt As TextBox)
         Dim n As String = String.Empty
         Dim v As Double = 0
