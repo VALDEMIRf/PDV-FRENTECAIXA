@@ -300,7 +300,7 @@ Partial Class frmEmpresa
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Arial", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(38, 14)
+        Me.Label28.Location = New System.Drawing.Point(83, 9)
         Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(396, 38)
@@ -320,7 +320,7 @@ Partial Class frmEmpresa
         Me.txtTelResidencial.Location = New System.Drawing.Point(104, 291)
         Me.txtTelResidencial.Mask = "(99) 0000-0000"
         Me.txtTelResidencial.Name = "txtTelResidencial"
-        Me.txtTelResidencial.Size = New System.Drawing.Size(93, 23)
+        Me.txtTelResidencial.Size = New System.Drawing.Size(114, 23)
         Me.txtTelResidencial.TabIndex = 11
         '
         'txtCEP
@@ -343,7 +343,7 @@ Partial Class frmEmpresa
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(565, 74)
+        Me.dg.Size = New System.Drawing.Size(565, 96)
         Me.dg.TabIndex = 249
         '
         'btSair
@@ -355,7 +355,7 @@ Partial Class frmEmpresa
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSair.ForeColor = System.Drawing.Color.Black
+        Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
         Me.btSair.Location = New System.Drawing.Point(461, 262)
         Me.btSair.Margin = New System.Windows.Forms.Padding(4)
@@ -376,7 +376,7 @@ Partial Class frmEmpresa
         Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
         Me.btnSalvar.Location = New System.Drawing.Point(461, 96)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
@@ -397,7 +397,7 @@ Partial Class frmEmpresa
         Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.ForeColor = System.Drawing.Color.Black
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
         Me.btnEditar.Location = New System.Drawing.Point(461, 149)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
@@ -418,7 +418,7 @@ Partial Class frmEmpresa
         Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.ForeColor = System.Drawing.Color.Black
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
         Me.btnExcluir.Location = New System.Drawing.Point(461, 211)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
@@ -434,9 +434,9 @@ Partial Class frmEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.Teal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(591, 434)
+        Me.ClientSize = New System.Drawing.Size(591, 457)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btnEditar)

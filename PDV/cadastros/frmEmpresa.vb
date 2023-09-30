@@ -24,7 +24,7 @@ Public Class frmEmpresa
 
             FormatarDG()
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os Fornecedores" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listar a Empresa" + ex.Message.ToString)
         Finally
 
             fechar()
@@ -34,6 +34,18 @@ Public Class frmEmpresa
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
+        dg.Columns(3).Visible = False
+        dg.Columns(4).Visible = False
+        dg.Columns(5).Visible = False
+        dg.Columns(6).Visible = False
+        dg.Columns(7).Visible = False
+        dg.Columns(8).Visible = False
+        dg.Columns(9).Visible = False
+        dg.Columns(10).Visible = False
+        dg.Columns(11).Visible = False
+        dg.Columns(12).Visible = False
+        dg.Columns(13).Visible = False
+        dg.Columns(14).Visible = False
 
         dg.Columns(1).HeaderText = "CNPJ"
         dg.Columns(2).HeaderText = "Nome da Empresa"
@@ -46,23 +58,13 @@ Public Class frmEmpresa
         dg.Columns(9).HeaderText = "UF"
         dg.Columns(10).HeaderText = "Cep"
         dg.Columns(11).HeaderText = "Telefone"
-        dg.Columns(12).HeaderText = "Situação"
+        dg.Columns(12).HeaderText = "Celular"
         dg.Columns(13).HeaderText = "Email"
         dg.Columns(14).HeaderText = "Dt. Cadastro"
 
+        dg.Columns(1).Width = 140
+        dg.Columns(2).Width = 350
 
-        dg.Columns(1).Width = 120
-        dg.Columns(2).Width = 200
-        dg.Columns(3).Width = 110
-        dg.Columns(4).Width = 220
-        dg.Columns(5).Width = 35
-        dg.Columns(6).Width = 100
-        dg.Columns(7).Width = 100
-        dg.Columns(9).Width = 30
-        dg.Columns(10).Width = 90
-        dg.Columns(12).Width = 200
-        dg.Columns(13).Width = 90
-        dg.Columns(14).Width = 200
 
     End Sub
 

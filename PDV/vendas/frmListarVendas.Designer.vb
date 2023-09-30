@@ -40,8 +40,8 @@ Partial Class frmListarVendas
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(259, 2)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(262, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(327, 40)
         Me.Label2.TabIndex = 183
@@ -50,7 +50,7 @@ Partial Class frmListarVendas
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(553, 34)
+        Me.dtData.Location = New System.Drawing.Point(356, 78)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(157, 20)
         Me.dtData.TabIndex = 182
@@ -59,8 +59,8 @@ Partial Class frmListarVendas
         '
         Me.rbData.AutoSize = True
         Me.rbData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbData.ForeColor = System.Drawing.Color.Black
-        Me.rbData.Location = New System.Drawing.Point(288, 58)
+        Me.rbData.ForeColor = System.Drawing.Color.White
+        Me.rbData.Location = New System.Drawing.Point(289, 76)
         Me.rbData.Name = "rbData"
         Me.rbData.Size = New System.Drawing.Size(57, 22)
         Me.rbData.TabIndex = 181
@@ -72,8 +72,8 @@ Partial Class frmListarVendas
         '
         Me.rbFuncionario.AutoSize = True
         Me.rbFuncionario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbFuncionario.ForeColor = System.Drawing.Color.Black
-        Me.rbFuncionario.Location = New System.Drawing.Point(178, 57)
+        Me.rbFuncionario.ForeColor = System.Drawing.Color.White
+        Me.rbFuncionario.Location = New System.Drawing.Point(179, 75)
         Me.rbFuncionario.Name = "rbFuncionario"
         Me.rbFuncionario.Size = New System.Drawing.Size(104, 22)
         Me.rbFuncionario.TabIndex = 180
@@ -85,8 +85,8 @@ Partial Class frmListarVendas
         '
         Me.rbCliente.AutoSize = True
         Me.rbCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbCliente.ForeColor = System.Drawing.Color.Black
-        Me.rbCliente.Location = New System.Drawing.Point(100, 56)
+        Me.rbCliente.ForeColor = System.Drawing.Color.White
+        Me.rbCliente.Location = New System.Drawing.Point(101, 74)
         Me.rbCliente.Name = "rbCliente"
         Me.rbCliente.Size = New System.Drawing.Size(71, 22)
         Me.rbCliente.TabIndex = 179
@@ -98,8 +98,8 @@ Partial Class frmListarVendas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(31, 57)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(32, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 18)
         Me.Label1.TabIndex = 178
@@ -108,7 +108,7 @@ Partial Class frmListarVendas
         'cbFuncionario
         '
         Me.cbFuncionario.FormattingEnabled = True
-        Me.cbFuncionario.Location = New System.Drawing.Point(586, 73)
+        Me.cbFuncionario.Location = New System.Drawing.Point(356, 77)
         Me.cbFuncionario.Name = "cbFuncionario"
         Me.cbFuncionario.Size = New System.Drawing.Size(157, 21)
         Me.cbFuncionario.TabIndex = 177
@@ -116,7 +116,7 @@ Partial Class frmListarVendas
         'cbCliente
         '
         Me.cbCliente.FormattingEnabled = True
-        Me.cbCliente.Location = New System.Drawing.Point(355, 59)
+        Me.cbCliente.Location = New System.Drawing.Point(356, 77)
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(157, 21)
         Me.cbCliente.TabIndex = 176
@@ -128,12 +128,12 @@ Partial Class frmListarVendas
         Me.dg.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(9, 90)
+        Me.dg.Location = New System.Drawing.Point(9, 107)
         Me.dg.Margin = New System.Windows.Forms.Padding(6)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(887, 349)
+        Me.dg.Size = New System.Drawing.Size(887, 332)
         Me.dg.TabIndex = 184
         '
         'lblSair
@@ -141,8 +141,8 @@ Partial Class frmListarVendas
         Me.lblSair.AutoSize = True
         Me.lblSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSair.ForeColor = System.Drawing.Color.Black
-        Me.lblSair.Location = New System.Drawing.Point(838, 20)
+        Me.lblSair.ForeColor = System.Drawing.Color.White
+        Me.lblSair.Location = New System.Drawing.Point(12, 9)
         Me.lblSair.Name = "lblSair"
         Me.lblSair.Size = New System.Drawing.Size(37, 20)
         Me.lblSair.TabIndex = 185
@@ -152,7 +152,7 @@ Partial Class frmListarVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(911, 454)
         Me.Controls.Add(Me.lblSair)
         Me.Controls.Add(Me.dg)
@@ -171,7 +171,7 @@ Partial Class frmListarVendas
         Me.MinimizeBox = False
         Me.Name = "frmListarVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmListarVendas"
+        Me.Text = "Listar Vendas"
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
