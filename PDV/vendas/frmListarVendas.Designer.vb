@@ -50,7 +50,7 @@ Partial Class frmListarVendas
         'dtData
         '
         Me.dtData.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtData.Location = New System.Drawing.Point(355, 60)
+        Me.dtData.Location = New System.Drawing.Point(553, 34)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(157, 20)
         Me.dtData.TabIndex = 182
@@ -108,7 +108,7 @@ Partial Class frmListarVendas
         'cbFuncionario
         '
         Me.cbFuncionario.FormattingEnabled = True
-        Me.cbFuncionario.Location = New System.Drawing.Point(355, 60)
+        Me.cbFuncionario.Location = New System.Drawing.Point(586, 73)
         Me.cbFuncionario.Name = "cbFuncionario"
         Me.cbFuncionario.Size = New System.Drawing.Size(157, 21)
         Me.cbFuncionario.TabIndex = 177

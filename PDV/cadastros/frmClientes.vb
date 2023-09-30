@@ -46,8 +46,8 @@ Public Class frmClientes
         txtEmail.Enabled = True
         txtdtNasc.Enabled = True
         'txtEndereco.Enabled = True
-        'txtNumero.Enabled = True
-        'txtCompl.Enabled = True
+        txtNumero.Enabled = True
+        txtCompl.Enabled = True
         'txtBairro.Enabled = True
         'txtCidade.Enabled = True
         'txtUF.Enabled = True

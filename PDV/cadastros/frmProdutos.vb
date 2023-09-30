@@ -523,10 +523,10 @@ Public Class frmProdutos
     End Sub
 
     Private Sub txtValorCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValorCompra.KeyPress
-        Select Case (txtValorCompra.TextLength)
-            Case 4
-                txtValorCompra.SelectionStart = 5
-        End Select
+        'Select Case (txtValorCompra.TextLength)
+        '    Case 4
+        '        txtValorCompra.SelectionStart = 5
+        'End Select
     End Sub
 
     Public Shared Sub Moeda(ByRef txt As TextBox)
@@ -546,17 +546,91 @@ Public Class frmProdutos
     End Sub
 
     Private Sub txtValorCompra_TextChanged(sender As Object, e As EventArgs) Handles txtValorCompra.TextChanged
-        frmProdutos.Moeda(txtValorCompra)
+        ' frmProdutos.Moeda(txtValorCompra)
     End Sub
 
     Private Sub txtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged
-        frmProdutos.Moeda(txtValor)
+        '  frmProdutos.Moeda(txtValor)
     End Sub
 
     Private Sub txtValor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValor.KeyPress
-        Select Case (txtValor.TextLength)
-            Case 4
-                txtValor.SelectionStart = 5
-        End Select
+        '    Select Case (txtValor.TextLength)
+        '        Case 4
+        '            txtValor.SelectionStart = 5
+        '    End Select
     End Sub
+
+    '    Private Sub txtHoras_BeforeUpdate(ByVal Cancel As MSForms.ReturnBoolean)
+    '        Dim TimeStr As String
+
+    '	Set TextLength = txtHoras
+
+    '	On Error GoTo EndMacro
+    '        With txtHoras
+    '            If HasFormula = False Then
+
+    '                Select Case Len(TextLength)
+
+    '                    Case 1
+    '                        TimeStr = "00:0" & amp; TextLength
+    '			Case 2
+    '                        TimeStr = "00:" & amp; TextLength
+    '			Case 3
+    '                        TimeStr = Left(TextLength, 1) & ":" & Right(TextLength, 2)
+    '                    Case 4
+    '                        TimeStr = Left(TextLength, 2) & ":" & Right(TextLength, 2)
+
+    '                        'Case 5 ' ex: 12345 = 01:23:45
+    '                        '        TimeStr = Left(TextLength, 1) & ":" & Mid(TextLength, 2, 2) & ":" & Right(TextLength, 2)
+    '                        'Case 6 ' ex: 123456 = 12:34:56
+    '                        '        TimeStr = Left(TextLength, 2) & ":" & Mid(TextLength, 3, 2) & ":" & Right(TextLength, 2)
+
+    '                    Case Else
+    '                        MsgBox "HORA EM BRANCo !!!"
+    '                      'With TextBox1
+    '                        '    .SetFocus
+    '                        '.SelStart = 0
+    '                        '.SelLength = Len(.Text)
+    '                        '  End With
+    '                        Exit Sub
+
+    '                End Select
+    '                Application.EnableEvents = False
+    '                Formula = TimeValue(TimeStr)
+    '                txtHoras = TimeStr
+    '                sCancel = False
+    '            End If
+    '        End With
+
+    '        GoTo Fim
+
+    'EndMacro:
+
+    '        MsgBox "HORA Inválida !!!"
+    '          With txtHoras
+    '            .SetFocus
+    '            .SelStart = 0
+    '            .SelLength = Len(.Text)
+    '        End With
+    '        sCancel = True
+
+    'Fim:
+    '        Application.EnableEvents = True
+    '    End Sub
+
+    '    Private Sub txtHoras_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+    '        'Limita a Qde de caracteres
+    '        txtHoras.MaxLength = 4
+
+    '        Select Case KeyAscii
+    '            Case 8, 48 To 57 ' BackSpace e numericos
+    '                'If Len(txtHoras) = 2 Or Len(txtHoras) = 6 Then
+    '                '  txtHoras.Text = txtHoras.Text & ":"
+    '                SendKeys "{End}", False
+    '             ' End If
+    '            Case Else ' o resto é travado
+    '                KeyAscii = 0
+    '        End Select
+    '    End Sub
+
 End Class

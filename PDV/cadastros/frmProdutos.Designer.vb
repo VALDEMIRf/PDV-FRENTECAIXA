@@ -59,6 +59,8 @@ Partial Class frmProdutos
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Cadastro = New System.Windows.Forms.TabPage()
+        Me.txtVlr = New System.Windows.Forms.TextBox()
+        Me.txtVlrCompra = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cbUnidade = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -66,8 +68,6 @@ Partial Class frmProdutos
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Consulta = New System.Windows.Forms.TabPage()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.txtVlrCompra = New System.Windows.Forms.TextBox()
-        Me.txtVlr = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -141,7 +141,7 @@ Partial Class frmProdutos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(573, 34)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
@@ -181,7 +181,7 @@ Partial Class frmProdutos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(582, 83)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
@@ -202,7 +202,7 @@ Partial Class frmProdutos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(30, 89)
         Me.Label5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label5.Name = "Label5"
@@ -214,7 +214,7 @@ Partial Class frmProdutos
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(603, 180)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
@@ -234,7 +234,7 @@ Partial Class frmProdutos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(55, 27)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
@@ -254,7 +254,7 @@ Partial Class frmProdutos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(15, 11)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
@@ -270,6 +270,7 @@ Partial Class frmProdutos
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
         Me.btSair.Location = New System.Drawing.Point(361, 23)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
@@ -285,7 +286,7 @@ Partial Class frmProdutos
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(914, 325)
         Me.Label11.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label11.Name = "Label11"
@@ -297,7 +298,7 @@ Partial Class frmProdutos
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.Color.Black
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
         Me.lblTotal.Location = New System.Drawing.Point(963, 326)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTotal.Name = "lblTotal"
@@ -313,6 +314,7 @@ Partial Class frmProdutos
         Me.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
         Me.btnExcluir.Location = New System.Drawing.Point(272, 20)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
@@ -332,6 +334,7 @@ Partial Class frmProdutos
         Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
         Me.btnEditar.Location = New System.Drawing.Point(186, 18)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
@@ -351,6 +354,7 @@ Partial Class frmProdutos
         Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
         Me.btnSalvar.Location = New System.Drawing.Point(94, 17)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
@@ -370,6 +374,7 @@ Partial Class frmProdutos
         Me.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNovo.ForeColor = System.Drawing.Color.White
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
         Me.btnNovo.Location = New System.Drawing.Point(7, 17)
         Me.btnNovo.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
@@ -400,7 +405,7 @@ Partial Class frmProdutos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(597, 133)
         Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label6.Name = "Label6"
@@ -421,7 +426,7 @@ Partial Class frmProdutos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(21, 152)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(81, 16)
@@ -471,7 +476,7 @@ Partial Class frmProdutos
         '
         'Cadastro
         '
-        Me.Cadastro.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Cadastro.BackColor = System.Drawing.Color.Teal
         Me.Cadastro.Controls.Add(Me.txtVlr)
         Me.Cadastro.Controls.Add(Me.txtVlrCompra)
         Me.Cadastro.Controls.Add(Me.Label13)
@@ -505,6 +510,24 @@ Partial Class frmProdutos
         Me.Cadastro.TabIndex = 0
         Me.Cadastro.Text = "Cadastro"
         '
+        'txtVlr
+        '
+        Me.txtVlr.Enabled = False
+        Me.txtVlr.Location = New System.Drawing.Point(688, 83)
+        Me.txtVlr.Name = "txtVlr"
+        Me.txtVlr.ReadOnly = True
+        Me.txtVlr.Size = New System.Drawing.Size(90, 22)
+        Me.txtVlr.TabIndex = 194
+        '
+        'txtVlrCompra
+        '
+        Me.txtVlrCompra.Enabled = False
+        Me.txtVlrCompra.Location = New System.Drawing.Point(688, 34)
+        Me.txtVlrCompra.Name = "txtVlrCompra"
+        Me.txtVlrCompra.ReadOnly = True
+        Me.txtVlrCompra.Size = New System.Drawing.Size(90, 22)
+        Me.txtVlrCompra.TabIndex = 193
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -531,7 +554,7 @@ Partial Class frmProdutos
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(42, 225)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 16)
@@ -551,7 +574,7 @@ Partial Class frmProdutos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(35, 183)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(70, 16)
@@ -560,7 +583,7 @@ Partial Class frmProdutos
         '
         'Consulta
         '
-        Me.Consulta.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Consulta.BackColor = System.Drawing.Color.Teal
         Me.Consulta.Controls.Add(Me.dg)
         Me.Consulta.Controls.Add(Me.txtBuscar)
         Me.Consulta.Controls.Add(Me.Label11)
@@ -584,29 +607,11 @@ Partial Class frmProdutos
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
-        'txtVlrCompra
-        '
-        Me.txtVlrCompra.Enabled = False
-        Me.txtVlrCompra.Location = New System.Drawing.Point(688, 34)
-        Me.txtVlrCompra.Name = "txtVlrCompra"
-        Me.txtVlrCompra.ReadOnly = True
-        Me.txtVlrCompra.Size = New System.Drawing.Size(90, 22)
-        Me.txtVlrCompra.TabIndex = 193
-        '
-        'txtVlr
-        '
-        Me.txtVlr.Enabled = False
-        Me.txtVlr.Location = New System.Drawing.Point(688, 83)
-        Me.txtVlr.Name = "txtVlr"
-        Me.txtVlr.ReadOnly = True
-        Me.txtVlr.Size = New System.Drawing.Size(90, 22)
-        Me.txtVlr.TabIndex = 194
-        '
         'frmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1036, 478)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
