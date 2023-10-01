@@ -51,7 +51,7 @@ Partial Class frmEstoque
         'cbProduto
         '
         Me.cbProduto.FormattingEnabled = True
-        Me.cbProduto.Location = New System.Drawing.Point(127, 36)
+        Me.cbProduto.Location = New System.Drawing.Point(136, 36)
         Me.cbProduto.Name = "cbProduto"
         Me.cbProduto.Size = New System.Drawing.Size(203, 24)
         Me.cbProduto.TabIndex = 115
@@ -59,42 +59,45 @@ Partial Class frmEstoque
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(35, 40)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(74, 40)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 16)
+        Me.Label3.Size = New System.Drawing.Size(58, 17)
         Me.Label3.TabIndex = 113
         Me.Label3.Text = "Produto"
         '
         'txtQuantidade
         '
-        Me.txtQuantidade.Location = New System.Drawing.Point(127, 94)
+        Me.txtQuantidade.Location = New System.Drawing.Point(136, 94)
         Me.txtQuantidade.Name = "txtQuantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(70, 22)
+        Me.txtQuantidade.Size = New System.Drawing.Size(70, 23)
         Me.txtQuantidade.TabIndex = 111
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 97)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(46, 97)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 16)
+        Me.Label2.Size = New System.Drawing.Size(86, 17)
         Me.Label2.TabIndex = 112
         Me.Label2.Text = "Quantidade:"
         '
         'txtEstoque
         '
         Me.txtEstoque.Enabled = False
-        Me.txtEstoque.Location = New System.Drawing.Point(127, 122)
+        Me.txtEstoque.Location = New System.Drawing.Point(136, 122)
         Me.txtEstoque.Name = "txtEstoque"
-        Me.txtEstoque.Size = New System.Drawing.Size(70, 22)
+        Me.txtEstoque.Size = New System.Drawing.Size(70, 23)
         Me.txtEstoque.TabIndex = 119
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(46, 125)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(67, 125)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 16)
+        Me.Label4.Size = New System.Drawing.Size(64, 17)
         Me.Label4.TabIndex = 120
         Me.Label4.Text = "Estoque:"
         '
@@ -102,7 +105,7 @@ Partial Class frmEstoque
         '
         Me.cbDescricao.FormattingEnabled = True
         Me.cbDescricao.Items.AddRange(New Object() {"Entrada", "Saída"})
-        Me.cbDescricao.Location = New System.Drawing.Point(127, 66)
+        Me.cbDescricao.Location = New System.Drawing.Point(136, 66)
         Me.cbDescricao.Name = "cbDescricao"
         Me.cbDescricao.Size = New System.Drawing.Size(203, 24)
         Me.cbDescricao.TabIndex = 118
@@ -110,18 +113,20 @@ Partial Class frmEstoque
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(26, 69)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(57, 69)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(73, 16)
+        Me.Label5.Size = New System.Drawing.Size(75, 17)
         Me.Label5.TabIndex = 117
         Me.Label5.Text = "Descrição:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 9)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(75, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 16)
+        Me.Label1.Size = New System.Drawing.Size(56, 17)
         Me.Label1.TabIndex = 116
         Me.Label1.Text = "Buscar:"
         '
@@ -144,11 +149,12 @@ Partial Class frmEstoque
         Me.GroupBox1.Controls.Add(Me.btSair)
         Me.GroupBox1.Controls.Add(Me.btnSalvar)
         Me.GroupBox1.Controls.Add(Me.btnExcluir)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 410)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 406)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(340, 50)
+        Me.GroupBox1.Size = New System.Drawing.Size(358, 50)
         Me.GroupBox1.TabIndex = 169
         Me.GroupBox1.TabStop = False
         '
@@ -180,10 +186,10 @@ Partial Class frmEstoque
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(265, 13)
+        Me.btSair.Location = New System.Drawing.Point(276, 13)
         Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(72, 31)
+        Me.btSair.Size = New System.Drawing.Size(75, 30)
         Me.btSair.TabIndex = 165
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -202,7 +208,7 @@ Partial Class frmEstoque
         Me.btnSalvar.Location = New System.Drawing.Point(93, 9)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(87, 37)
+        Me.btnSalvar.Size = New System.Drawing.Size(90, 37)
         Me.btnSalvar.TabIndex = 162
         Me.btnSalvar.Text = "Salvar"
         Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -218,10 +224,10 @@ Partial Class frmEstoque
         Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
-        Me.btnExcluir.Location = New System.Drawing.Point(180, 8)
+        Me.btnExcluir.Location = New System.Drawing.Point(184, 8)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(87, 36)
+        Me.btnExcluir.Size = New System.Drawing.Size(90, 36)
         Me.btnExcluir.TabIndex = 164
         Me.btnExcluir.Text = "Excluir"
         Me.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -232,7 +238,7 @@ Partial Class frmEstoque
         '
         Me.cbBuscar.FormattingEnabled = True
         Me.cbBuscar.Items.AddRange(New Object() {"Entrada", "Saída"})
-        Me.cbBuscar.Location = New System.Drawing.Point(127, 6)
+        Me.cbBuscar.Location = New System.Drawing.Point(136, 6)
         Me.cbBuscar.Name = "cbBuscar"
         Me.cbBuscar.Size = New System.Drawing.Size(203, 24)
         Me.cbBuscar.TabIndex = 170
@@ -240,32 +246,34 @@ Partial Class frmEstoque
         'txtCodigo
         '
         Me.txtCodigo.AutoSize = True
+        Me.txtCodigo.ForeColor = System.Drawing.Color.White
         Me.txtCodigo.Location = New System.Drawing.Point(9, 9)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(15, 16)
+        Me.txtCodigo.Size = New System.Drawing.Size(16, 17)
         Me.txtCodigo.TabIndex = 171
         Me.txtCodigo.Text = "0"
         Me.txtCodigo.Visible = False
         '
         'txtQuantVendida
         '
-        Me.txtQuantVendida.Location = New System.Drawing.Point(127, 150)
+        Me.txtQuantVendida.Location = New System.Drawing.Point(136, 150)
         Me.txtQuantVendida.Name = "txtQuantVendida"
-        Me.txtQuantVendida.Size = New System.Drawing.Size(70, 22)
+        Me.txtQuantVendida.Size = New System.Drawing.Size(70, 23)
         Me.txtQuantVendida.TabIndex = 172
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(21, 153)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(23, 153)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 16)
+        Me.Label6.Size = New System.Drawing.Size(107, 17)
         Me.Label6.TabIndex = 173
         Me.Label6.Text = "Quant. Vendida"
         '
         'imagem
         '
-        Me.imagem.Location = New System.Drawing.Point(426, 16)
+        Me.imagem.Location = New System.Drawing.Point(455, 17)
         Me.imagem.Name = "imagem"
         Me.imagem.Size = New System.Drawing.Size(100, 100)
         Me.imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -276,7 +284,7 @@ Partial Class frmEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(582, 467)
         Me.Controls.Add(Me.txtQuantVendida)
         Me.Controls.Add(Me.Label6)
@@ -294,7 +302,7 @@ Partial Class frmEstoque
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtQuantidade)
         Me.Controls.Add(Me.Label2)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)

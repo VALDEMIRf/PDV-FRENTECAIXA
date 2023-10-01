@@ -39,6 +39,22 @@ Public Class frmCadFornecedores
 
     Private Sub FormatarDG()
         dg.Columns(0).Visible = False
+        dg.Columns(3).Visible = False
+        dg.Columns(4).Visible = False
+        dg.Columns(5).Visible = False
+        dg.Columns(6).Visible = False
+        dg.Columns(7).Visible = False
+        dg.Columns(8).Visible = False
+        dg.Columns(9).Visible = False
+        dg.Columns(10).Visible = False
+        dg.Columns(11).Visible = False
+        dg.Columns(12).Visible = False
+        dg.Columns(13).Visible = False
+        dg.Columns(14).Visible = False
+        dg.Columns(15).Visible = False
+        dg.Columns(16).Visible = False
+        dg.Columns(17).Visible = False
+        dg.Columns(18).Visible = False
 
         dg.Columns(1).HeaderText = "CNPJ"
         dg.Columns(2).HeaderText = "Nome da Empresa"
@@ -57,22 +73,10 @@ Public Class frmCadFornecedores
         dg.Columns(15).HeaderText = "Abertura"
         dg.Columns(16).HeaderText = "Contato"
         dg.Columns(17).HeaderText = "Tel. Contato"
-        dg.Columns(18).HeaderText = "QSA"
-        dg.Columns(19).HeaderText = "Dt. Cadastro"
+        dg.Columns(18).HeaderText = "Dt. Cadastro"
 
-
-        dg.Columns(1).Width = 120
-        dg.Columns(2).Width = 200
-        dg.Columns(3).Width = 110
-        dg.Columns(4).Width = 220
-        dg.Columns(5).Width = 35
-        dg.Columns(6).Width = 100
-        dg.Columns(7).Width = 100
-        dg.Columns(9).Width = 30
-        dg.Columns(10).Width = 90
-        dg.Columns(12).Width = 200
-        dg.Columns(13).Width = 90
-        dg.Columns(14).Width = 200
+        dg.Columns(1).Width = 150
+        dg.Columns(2).Width = 300
 
     End Sub
 
@@ -84,7 +88,6 @@ Public Class frmCadFornecedores
         txtFantasia.Text = ""
         txtTel.Text = ""
         txtEmail.Text = ""
-        txtResponsavel.Text = ""
         txtEndereco.Text = ""
         txtNumero.Text = ""
         txtCompl.Text = ""
@@ -205,8 +208,7 @@ Public Class frmCadFornecedores
                 cmd.Parameters.AddWithValue("@abertura", txtAbertura.Text)
                 cmd.Parameters.AddWithValue("@contato", txtContato.Text)
                 cmd.Parameters.AddWithValue("@telcontato", txtTelContato.Text)
-                'Alterar txtContato.Text quando trazer os dados da Receita Federal
-                cmd.Parameters.AddWithValue("@qsa", txtContato.Text)
+
                 cmd.Parameters.AddWithValue("@data_cadastro", Now.Date())
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
@@ -284,14 +286,10 @@ Public Class frmCadFornecedores
         txtAbertura.Text = dg.CurrentRow.Cells(15).Value
         txtContato.Text = dg.CurrentRow.Cells(16).Value
         txtTelContato.Text = dg.CurrentRow.Cells(17).Value
-        ' txtResponsavel.Text = dg.CurrentRow.Cells(18).Value
-
-
 
     End Sub
 
     Private Sub btBuscarEmpresa_Click(sender As Object, e As EventArgs) Handles btBuscarEmpresa.Click
-
 
         btnSalvar.Enabled = True
 
@@ -329,15 +327,6 @@ Public Class frmCadFornecedores
     Private Sub btLimpar_Click(sender As Object, e As EventArgs) Handles btLimpar.Click
         Limpar()
     End Sub
-
-    'Private Sub txtCNPJ_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCNPJ.KeyPress
-    '    If IsNumeric(e.KeyChar) AndAlso txtCNPJ.TextLength < txtCNPJ.MaxLength Then
-    '        txtCNPJ.Text &= e.KeyChar
-    '        txtCNPJ.SelectionStart = txtCNPJ.TextLength
-    '        Call formatacnpj(txtCNPJ)
-    '    End If
-    '    e.Handled = True
-    'End Sub
 
     Private Sub formatacnpj(ByVal txtTexto As Object)
         If Len(txtTexto.Text) = 2 Or Len(txtTexto.Text) = 6 Then

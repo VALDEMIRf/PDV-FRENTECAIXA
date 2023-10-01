@@ -42,10 +42,10 @@ Partial Class frmSangria
         Me.btnSalvarSangria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvarSangria.ForeColor = System.Drawing.Color.White
         Me.btnSalvarSangria.Image = CType(resources.GetObject("btnSalvarSangria.Image"), System.Drawing.Image)
-        Me.btnSalvarSangria.Location = New System.Drawing.Point(227, 44)
-        Me.btnSalvarSangria.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnSalvarSangria.Location = New System.Drawing.Point(257, 50)
+        Me.btnSalvarSangria.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.btnSalvarSangria.Name = "btnSalvarSangria"
-        Me.btnSalvarSangria.Size = New System.Drawing.Size(80, 48)
+        Me.btnSalvarSangria.Size = New System.Drawing.Size(90, 35)
         Me.btnSalvarSangria.TabIndex = 167
         Me.btnSalvarSangria.Text = "Salvar"
         Me.btnSalvarSangria.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -54,10 +54,10 @@ Partial Class frmSangria
         '
         'txtSangria
         '
-        Me.txtSangria.Location = New System.Drawing.Point(133, 58)
-        Me.txtSangria.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtSangria.Location = New System.Drawing.Point(124, 57)
+        Me.txtSangria.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtSangria.Name = "txtSangria"
-        Me.txtSangria.Size = New System.Drawing.Size(89, 20)
+        Me.txtSangria.Size = New System.Drawing.Size(117, 23)
         Me.txtSangria.TabIndex = 168
         '
         'Label2
@@ -65,8 +65,8 @@ Partial Class frmSangria
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(13, 59)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label2.Location = New System.Drawing.Point(9, 59)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 16)
         Me.Label2.TabIndex = 169
@@ -77,8 +77,8 @@ Partial Class frmSangria
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 89)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label1.Location = New System.Drawing.Point(9, 96)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 16)
         Me.Label1.TabIndex = 171
@@ -89,8 +89,8 @@ Partial Class frmSangria
         Me.lblTotSangria.AutoSize = True
         Me.lblTotSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotSangria.ForeColor = System.Drawing.Color.White
-        Me.lblTotSangria.Location = New System.Drawing.Point(158, 88)
-        Me.lblTotSangria.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblTotSangria.Location = New System.Drawing.Point(203, 94)
+        Me.lblTotSangria.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.lblTotSangria.Name = "lblTotSangria"
         Me.lblTotSangria.Size = New System.Drawing.Size(14, 20)
         Me.lblTotSangria.TabIndex = 172
@@ -101,8 +101,8 @@ Partial Class frmSangria
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(125, 87)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label3.Location = New System.Drawing.Point(159, 93)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 20)
         Me.Label3.TabIndex = 173
@@ -112,20 +112,21 @@ Partial Class frmSangria
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(70, 9)
+        Me.Label4.Location = New System.Drawing.Point(93, 11)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(169, 20)
+        Me.Label4.Size = New System.Drawing.Size(235, 29)
         Me.Label4.TabIndex = 174
         Me.Label4.Text = "INSERIR SANGRIA"
         '
         'frmSangria
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DodgerBlue
-        Me.ClientSize = New System.Drawing.Size(311, 123)
+        Me.BackColor = System.Drawing.Color.Teal
+        Me.ClientSize = New System.Drawing.Size(353, 122)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblTotSangria)
@@ -133,7 +134,9 @@ Partial Class frmSangria
         Me.Controls.Add(Me.btnSalvarSangria)
         Me.Controls.Add(Me.txtSangria)
         Me.Controls.Add(Me.Label2)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmSangria"

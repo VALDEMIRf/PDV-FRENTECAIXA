@@ -30,6 +30,7 @@ Partial Class frmFecharCaixa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtVlrAbertura = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -41,12 +42,12 @@ Partial Class frmFecharCaixa
         Me.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSair.ForeColor = System.Drawing.Color.Black
+        Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(564, 127)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btSair.Location = New System.Drawing.Point(735, 321)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(71, 44)
+        Me.btSair.Size = New System.Drawing.Size(80, 35)
         Me.btSair.TabIndex = 165
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -61,12 +62,12 @@ Partial Class frmFecharCaixa
         Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure
         Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.Location = New System.Drawing.Point(564, 53)
-        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
+        Me.btnSalvar.Location = New System.Drawing.Point(735, 262)
+        Me.btnSalvar.Margin = New System.Windows.Forms.Padding(9, 7, 9, 7)
         Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(80, 50)
+        Me.btnSalvar.Size = New System.Drawing.Size(90, 35)
         Me.btnSalvar.TabIndex = 162
         Me.btnSalvar.Text = "Salvar"
         Me.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -79,28 +80,28 @@ Partial Class frmFecharCaixa
         Me.dg.AllowUserToDeleteRows = False
         Me.dg.BackgroundColor = System.Drawing.Color.White
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg.Location = New System.Drawing.Point(13, 53)
-        Me.dg.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg.Location = New System.Drawing.Point(1, 108)
+        Me.dg.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
-        Me.dg.Size = New System.Drawing.Size(540, 203)
+        Me.dg.Size = New System.Drawing.Size(720, 250)
         Me.dg.TabIndex = 180
         '
         'txtTotalCaixa
         '
-        Me.txtTotalCaixa.Location = New System.Drawing.Point(328, 24)
-        Me.txtTotalCaixa.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtTotalCaixa.Location = New System.Drawing.Point(354, 74)
+        Me.txtTotalCaixa.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtTotalCaixa.Name = "txtTotalCaixa"
-        Me.txtTotalCaixa.Size = New System.Drawing.Size(68, 20)
+        Me.txtTotalCaixa.Size = New System.Drawing.Size(89, 23)
         Me.txtTotalCaixa.TabIndex = 190
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(239, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(265, 75)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 16)
         Me.Label1.TabIndex = 189
@@ -108,30 +109,43 @@ Partial Class frmFecharCaixa
         '
         'txtVlrAbertura
         '
-        Me.txtVlrAbertura.Location = New System.Drawing.Point(128, 25)
-        Me.txtVlrAbertura.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtVlrAbertura.Location = New System.Drawing.Point(151, 70)
+        Me.txtVlrAbertura.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.txtVlrAbertura.Name = "txtVlrAbertura"
-        Me.txtVlrAbertura.Size = New System.Drawing.Size(76, 20)
+        Me.txtVlrAbertura.Size = New System.Drawing.Size(100, 23)
         Me.txtVlrAbertura.TabIndex = 167
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(11, 27)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(28, 73)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 16)
         Me.Label2.TabIndex = 168
         Me.Label2.Text = "Valor da Abertura:"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(236, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(250, 36)
+        Me.Label3.TabIndex = 191
+        Me.Label3.Text = "FECHAR CAIXA"
+        '
         'frmFecharCaixa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(647, 276)
+        Me.BackColor = System.Drawing.Color.Teal
+        Me.ClientSize = New System.Drawing.Size(863, 372)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtVlrAbertura)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.Label2)
@@ -139,12 +153,15 @@ Partial Class frmFecharCaixa
         Me.Controls.Add(Me.txtTotalCaixa)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dg)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmFecharCaixa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmFecharCaixa"
+        Me.Text = "Fechar Caixa"
         CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -157,4 +174,5 @@ Partial Class frmFecharCaixa
     Friend WithEvents Label1 As Label
     Friend WithEvents txtVlrAbertura As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

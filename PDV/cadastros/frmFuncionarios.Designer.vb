@@ -69,23 +69,23 @@ Partial Class frmFuncionarios
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.txtComplemento = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.btBuscarCEP = New System.Windows.Forms.Button()
         Me.txtCEP = New System.Windows.Forms.MaskedTextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtUF = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.Cadastro = New System.Windows.Forms.TabPage()
-        Me.Consulta = New System.Windows.Forms.TabPage()
-        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btBuscarCEP = New System.Windows.Forms.Button()
-        Me.pbImagem = New System.Windows.Forms.PictureBox()
-        Me.btImagem = New System.Windows.Forms.Button()
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.Cadastro = New System.Windows.Forms.TabPage()
+        Me.pbImagem = New System.Windows.Forms.PictureBox()
+        Me.btImagem = New System.Windows.Forms.Button()
+        Me.Consulta = New System.Windows.Forms.TabPage()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,9 +93,9 @@ Partial Class frmFuncionarios
         Me.GroupBox3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.Cadastro.SuspendLayout()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Consulta.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -106,7 +106,7 @@ Partial Class frmFuncionarios
         Me.GroupBox1.Controls.Add(Me.rbNome)
         Me.GroupBox1.Controls.Add(Me.txtBuscarCPF)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(18, 5)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
@@ -183,7 +183,7 @@ Partial Class frmFuncionarios
         Me.GroupBox2.Controls.Add(Me.txtEmail)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(13, 9)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(585, 146)
@@ -503,7 +503,7 @@ Partial Class frmFuncionarios
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(958, 324)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
@@ -515,7 +515,7 @@ Partial Class frmFuncionarios
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.ForeColor = System.Drawing.Color.Black
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
         Me.lblTotal.Location = New System.Drawing.Point(1007, 324)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotal.Name = "lblTotal"
@@ -558,7 +558,7 @@ Partial Class frmFuncionarios
         Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Controls.Add(Me.txtEndereco)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox5.ForeColor = System.Drawing.Color.White
         Me.GroupBox5.Location = New System.Drawing.Point(13, 162)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(758, 181)
@@ -583,6 +583,19 @@ Partial Class frmFuncionarios
         Me.Label21.Size = New System.Drawing.Size(55, 17)
         Me.Label21.TabIndex = 122
         Me.Label21.Text = "Compl.:"
+        '
+        'btBuscarCEP
+        '
+        Me.btBuscarCEP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btBuscarCEP.FlatAppearance.BorderSize = 0
+        Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
+        Me.btBuscarCEP.Location = New System.Drawing.Point(166, 31)
+        Me.btBuscarCEP.Name = "btBuscarCEP"
+        Me.btBuscarCEP.Size = New System.Drawing.Size(37, 26)
+        Me.btBuscarCEP.TabIndex = 120
+        Me.btBuscarCEP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btBuscarCEP.UseVisualStyleBackColor = True
         '
         'txtCEP
         '
@@ -609,7 +622,7 @@ Partial Class frmFuncionarios
         Me.txtUF.Enabled = False
         Me.txtUF.FormattingEnabled = True
         Me.txtUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"})
-        Me.txtUF.Location = New System.Drawing.Point(525, 29)
+        Me.txtUF.Location = New System.Drawing.Point(545, 29)
         Me.txtUF.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUF.Name = "txtUF"
         Me.txtUF.Size = New System.Drawing.Size(67, 24)
@@ -618,7 +631,7 @@ Partial Class frmFuncionarios
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(487, 33)
+        Me.Label14.Location = New System.Drawing.Point(507, 33)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(30, 17)
@@ -635,96 +648,9 @@ Partial Class frmFuncionarios
         Me.GroupBox3.ForeColor = System.Drawing.Color.Maroon
         Me.GroupBox3.Location = New System.Drawing.Point(12, 383)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(439, 65)
+        Me.GroupBox3.Size = New System.Drawing.Size(469, 65)
         Me.GroupBox3.TabIndex = 120
         Me.GroupBox3.TabStop = False
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.Cadastro)
-        Me.TabControl1.Controls.Add(Me.Consulta)
-        Me.TabControl1.Location = New System.Drawing.Point(9, 2)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1054, 375)
-        Me.TabControl1.TabIndex = 121
-        '
-        'Cadastro
-        '
-        Me.Cadastro.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Cadastro.Controls.Add(Me.GroupBox2)
-        Me.Cadastro.Controls.Add(Me.Label20)
-        Me.Cadastro.Controls.Add(Me.txtdtDemissao)
-        Me.Cadastro.Controls.Add(Me.dtData)
-        Me.Cadastro.Controls.Add(Me.GroupBox5)
-        Me.Cadastro.Controls.Add(Me.Label8)
-        Me.Cadastro.Controls.Add(Me.pbImagem)
-        Me.Cadastro.Controls.Add(Me.Label18)
-        Me.Cadastro.Controls.Add(Me.btImagem)
-        Me.Cadastro.Controls.Add(Me.cbTurno)
-        Me.Cadastro.Controls.Add(Me.Label9)
-        Me.Cadastro.Controls.Add(Me.cbCargo)
-        Me.Cadastro.Location = New System.Drawing.Point(4, 22)
-        Me.Cadastro.Name = "Cadastro"
-        Me.Cadastro.Padding = New System.Windows.Forms.Padding(3)
-        Me.Cadastro.Size = New System.Drawing.Size(1046, 349)
-        Me.Cadastro.TabIndex = 0
-        Me.Cadastro.Text = "Cadastro"
-        '
-        'Consulta
-        '
-        Me.Consulta.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Consulta.Controls.Add(Me.Label11)
-        Me.Consulta.Controls.Add(Me.lblTotal)
-        Me.Consulta.Controls.Add(Me.dg)
-        Me.Consulta.Controls.Add(Me.GroupBox1)
-        Me.Consulta.Location = New System.Drawing.Point(4, 22)
-        Me.Consulta.Name = "Consulta"
-        Me.Consulta.Padding = New System.Windows.Forms.Padding(3)
-        Me.Consulta.Size = New System.Drawing.Size(1046, 349)
-        Me.Consulta.TabIndex = 1
-        Me.Consulta.Text = "Consulta"
-        '
-        'errErro
-        '
-        Me.errErro.ContainerControl = Me
-        '
-        'btBuscarCEP
-        '
-        Me.btBuscarCEP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btBuscarCEP.FlatAppearance.BorderSize = 0
-        Me.btBuscarCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btBuscarCEP.Image = CType(resources.GetObject("btBuscarCEP.Image"), System.Drawing.Image)
-        Me.btBuscarCEP.Location = New System.Drawing.Point(166, 31)
-        Me.btBuscarCEP.Name = "btBuscarCEP"
-        Me.btBuscarCEP.Size = New System.Drawing.Size(37, 26)
-        Me.btBuscarCEP.TabIndex = 120
-        Me.btBuscarCEP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btBuscarCEP.UseVisualStyleBackColor = True
-        '
-        'pbImagem
-        '
-        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbImagem.Image = Global.PDV.My.Resources.Resources.sem_rosto
-        Me.pbImagem.Location = New System.Drawing.Point(850, 9)
-        Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(185, 171)
-        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbImagem.TabIndex = 110
-        Me.pbImagem.TabStop = False
-        '
-        'btImagem
-        '
-        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btImagem.FlatAppearance.BorderSize = 0
-        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
-        Me.btImagem.Location = New System.Drawing.Point(989, 186)
-        Me.btImagem.Name = "btImagem"
-        Me.btImagem.Size = New System.Drawing.Size(37, 26)
-        Me.btImagem.TabIndex = 104
-        Me.btImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btImagem.UseVisualStyleBackColor = True
         '
         'btnNovo
         '
@@ -735,7 +661,7 @@ Partial Class frmFuncionarios
         Me.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNovo.ForeColor = System.Drawing.Color.Black
+        Me.btnNovo.ForeColor = System.Drawing.Color.White
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
         Me.btnNovo.Location = New System.Drawing.Point(7, 15)
         Me.btnNovo.Margin = New System.Windows.Forms.Padding(4)
@@ -756,7 +682,7 @@ Partial Class frmFuncionarios
         Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btnSalvar.ForeColor = System.Drawing.Color.White
         Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
         Me.btnSalvar.Location = New System.Drawing.Point(92, 16)
         Me.btnSalvar.Margin = New System.Windows.Forms.Padding(4)
@@ -777,12 +703,12 @@ Partial Class frmFuncionarios
         Me.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSair.ForeColor = System.Drawing.Color.Black
+        Me.btSair.ForeColor = System.Drawing.Color.White
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(358, 16)
+        Me.btSair.Location = New System.Drawing.Point(359, 20)
         Me.btSair.Margin = New System.Windows.Forms.Padding(4)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(81, 37)
+        Me.btSair.Size = New System.Drawing.Size(78, 38)
         Me.btSair.TabIndex = 118
         Me.btSair.Text = "Sair"
         Me.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -798,7 +724,7 @@ Partial Class frmFuncionarios
         Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.ForeColor = System.Drawing.Color.Black
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
         Me.btnEditar.Location = New System.Drawing.Point(180, 17)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(4)
@@ -819,7 +745,7 @@ Partial Class frmFuncionarios
         Me.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.ForeColor = System.Drawing.Color.Black
+        Me.btnExcluir.ForeColor = System.Drawing.Color.White
         Me.btnExcluir.Image = CType(resources.GetObject("btnExcluir.Image"), System.Drawing.Image)
         Me.btnExcluir.Location = New System.Drawing.Point(266, 17)
         Me.btnExcluir.Margin = New System.Windows.Forms.Padding(4)
@@ -831,11 +757,86 @@ Partial Class frmFuncionarios
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.Cadastro)
+        Me.TabControl1.Controls.Add(Me.Consulta)
+        Me.TabControl1.Location = New System.Drawing.Point(9, 2)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1054, 375)
+        Me.TabControl1.TabIndex = 121
+        '
+        'Cadastro
+        '
+        Me.Cadastro.BackColor = System.Drawing.Color.Teal
+        Me.Cadastro.Controls.Add(Me.GroupBox2)
+        Me.Cadastro.Controls.Add(Me.Label20)
+        Me.Cadastro.Controls.Add(Me.txtdtDemissao)
+        Me.Cadastro.Controls.Add(Me.dtData)
+        Me.Cadastro.Controls.Add(Me.GroupBox5)
+        Me.Cadastro.Controls.Add(Me.Label8)
+        Me.Cadastro.Controls.Add(Me.pbImagem)
+        Me.Cadastro.Controls.Add(Me.Label18)
+        Me.Cadastro.Controls.Add(Me.btImagem)
+        Me.Cadastro.Controls.Add(Me.cbTurno)
+        Me.Cadastro.Controls.Add(Me.Label9)
+        Me.Cadastro.Controls.Add(Me.cbCargo)
+        Me.Cadastro.ForeColor = System.Drawing.Color.White
+        Me.Cadastro.Location = New System.Drawing.Point(4, 22)
+        Me.Cadastro.Name = "Cadastro"
+        Me.Cadastro.Padding = New System.Windows.Forms.Padding(3)
+        Me.Cadastro.Size = New System.Drawing.Size(1046, 349)
+        Me.Cadastro.TabIndex = 0
+        Me.Cadastro.Text = "Cadastro"
+        '
+        'pbImagem
+        '
+        Me.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pbImagem.Image = Global.PDV.My.Resources.Resources.imagesemfoto
+        Me.pbImagem.Location = New System.Drawing.Point(850, 9)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(185, 171)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 110
+        Me.pbImagem.TabStop = False
+        '
+        'btImagem
+        '
+        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btImagem.FlatAppearance.BorderSize = 0
+        Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btImagem.Image = CType(resources.GetObject("btImagem.Image"), System.Drawing.Image)
+        Me.btImagem.Location = New System.Drawing.Point(989, 186)
+        Me.btImagem.Name = "btImagem"
+        Me.btImagem.Size = New System.Drawing.Size(37, 26)
+        Me.btImagem.TabIndex = 104
+        Me.btImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btImagem.UseVisualStyleBackColor = True
+        '
+        'Consulta
+        '
+        Me.Consulta.BackColor = System.Drawing.Color.Teal
+        Me.Consulta.Controls.Add(Me.Label11)
+        Me.Consulta.Controls.Add(Me.lblTotal)
+        Me.Consulta.Controls.Add(Me.dg)
+        Me.Consulta.Controls.Add(Me.GroupBox1)
+        Me.Consulta.Location = New System.Drawing.Point(4, 22)
+        Me.Consulta.Name = "Consulta"
+        Me.Consulta.Padding = New System.Windows.Forms.Padding(3)
+        Me.Consulta.Size = New System.Drawing.Size(1046, 349)
+        Me.Consulta.TabIndex = 1
+        Me.Consulta.Text = "Consulta"
+        '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'frmFuncionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1074, 457)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox3)
@@ -858,10 +859,10 @@ Partial Class frmFuncionarios
         Me.TabControl1.ResumeLayout(False)
         Me.Cadastro.ResumeLayout(False)
         Me.Cadastro.PerformLayout()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Consulta.ResumeLayout(False)
         Me.Consulta.PerformLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

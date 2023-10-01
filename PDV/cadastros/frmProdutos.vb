@@ -19,8 +19,6 @@ Public Class frmProdutos
 
     Private Sub frmProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' carregarImagem()
-
-
         DesabilitarCampos()
         btnSalvar.Enabled = False
 
@@ -55,7 +53,6 @@ Public Class frmProdutos
         End Try
 
     End Sub
-
 
     Sub CarregarCategoriaProdutos()
         Dim DT As New DataTable
@@ -285,8 +282,6 @@ Public Class frmProdutos
                 MessageBox.Show(msg, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3)
 
                 ' PrintPreviewDialog1.Show()
-
-
                 Listar()
                 Limpar()
 

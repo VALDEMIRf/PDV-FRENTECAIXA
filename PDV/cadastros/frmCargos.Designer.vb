@@ -65,7 +65,7 @@ Partial Class frmCargos
         '
         Me.lblCargo.AutoSize = True
         Me.lblCargo.BackColor = System.Drawing.Color.Transparent
-        Me.lblCargo.ForeColor = System.Drawing.Color.Black
+        Me.lblCargo.ForeColor = System.Drawing.Color.White
         Me.lblCargo.Location = New System.Drawing.Point(249, 4)
         Me.lblCargo.Name = "lblCargo"
         Me.lblCargo.Size = New System.Drawing.Size(13, 13)
@@ -78,7 +78,7 @@ Partial Class frmCargos
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(1, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(217, 20)
@@ -94,7 +94,7 @@ Partial Class frmCargos
         Me.btNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNovo.ForeColor = System.Drawing.Color.Black
+        Me.btNovo.ForeColor = System.Drawing.Color.White
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
         Me.btNovo.Location = New System.Drawing.Point(6, 20)
         Me.btNovo.Name = "btNovo"
@@ -114,7 +114,7 @@ Partial Class frmCargos
         Me.btExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExcluir.ForeColor = System.Drawing.Color.Black
+        Me.btExcluir.ForeColor = System.Drawing.Color.White
         Me.btExcluir.Image = CType(resources.GetObject("btExcluir.Image"), System.Drawing.Image)
         Me.btExcluir.Location = New System.Drawing.Point(6, 175)
         Me.btExcluir.Name = "btExcluir"
@@ -134,7 +134,7 @@ Partial Class frmCargos
         Me.brSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.brSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.brSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.brSair.ForeColor = System.Drawing.Color.Black
+        Me.brSair.ForeColor = System.Drawing.Color.White
         Me.brSair.Image = CType(resources.GetObject("brSair.Image"), System.Drawing.Image)
         Me.brSair.Location = New System.Drawing.Point(1, 231)
         Me.brSair.Name = "brSair"
@@ -154,7 +154,7 @@ Partial Class frmCargos
         Me.btAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAlterar.ForeColor = System.Drawing.Color.Black
+        Me.btAlterar.ForeColor = System.Drawing.Color.White
         Me.btAlterar.Image = CType(resources.GetObject("btAlterar.Image"), System.Drawing.Image)
         Me.btAlterar.Location = New System.Drawing.Point(6, 121)
         Me.btAlterar.Name = "btAlterar"
@@ -174,7 +174,7 @@ Partial Class frmCargos
         Me.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
         Me.btSalvar.Location = New System.Drawing.Point(6, 78)
         Me.btSalvar.Name = "btSalvar"
@@ -206,7 +206,7 @@ Partial Class frmCargos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(375, 317)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgCargos)

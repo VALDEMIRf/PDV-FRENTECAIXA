@@ -47,9 +47,11 @@ Partial Class frmUnidadesMedidas
         Me.GroupBox1.Controls.Add(Me.btExcluir)
         Me.GroupBox1.Controls.Add(Me.btSalvar)
         Me.GroupBox1.Controls.Add(Me.btAlterar)
-        Me.GroupBox1.Location = New System.Drawing.Point(279, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(372, 49)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(107, 278)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(143, 342)
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         '
@@ -60,11 +62,12 @@ Partial Class frmUnidadesMedidas
         Me.btNovo.FlatAppearance.BorderSize = 0
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNovo.ForeColor = System.Drawing.Color.Black
+        Me.btNovo.ForeColor = System.Drawing.Color.White
         Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(4, 13)
+        Me.btNovo.Location = New System.Drawing.Point(5, 16)
+        Me.btNovo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(95, 37)
+        Me.btNovo.Size = New System.Drawing.Size(90, 35)
         Me.btNovo.TabIndex = 18
         Me.btNovo.Text = "Novo"
         Me.btNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -78,11 +81,12 @@ Partial Class frmUnidadesMedidas
         Me.brSair.FlatAppearance.BorderSize = 0
         Me.brSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.brSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.brSair.ForeColor = System.Drawing.Color.Black
+        Me.brSair.ForeColor = System.Drawing.Color.White
         Me.brSair.Image = CType(resources.GetObject("brSair.Image"), System.Drawing.Image)
-        Me.brSair.Location = New System.Drawing.Point(9, 232)
+        Me.brSair.Location = New System.Drawing.Point(4, 286)
+        Me.brSair.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.brSair.Name = "brSair"
-        Me.brSair.Size = New System.Drawing.Size(77, 40)
+        Me.brSair.Size = New System.Drawing.Size(90, 35)
         Me.brSair.TabIndex = 16
         Me.brSair.Text = "Sair"
         Me.brSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -96,11 +100,12 @@ Partial Class frmUnidadesMedidas
         Me.btExcluir.FlatAppearance.BorderSize = 0
         Me.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExcluir.ForeColor = System.Drawing.Color.Black
+        Me.btExcluir.ForeColor = System.Drawing.Color.White
         Me.btExcluir.Image = CType(resources.GetObject("btExcluir.Image"), System.Drawing.Image)
-        Me.btExcluir.Location = New System.Drawing.Point(9, 175)
+        Me.btExcluir.Location = New System.Drawing.Point(12, 215)
+        Me.btExcluir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btExcluir.Name = "btExcluir"
-        Me.btExcluir.Size = New System.Drawing.Size(91, 43)
+        Me.btExcluir.Size = New System.Drawing.Size(90, 35)
         Me.btExcluir.TabIndex = 17
         Me.btExcluir.Text = "Excluir"
         Me.btExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -114,11 +119,12 @@ Partial Class frmUnidadesMedidas
         Me.btSalvar.FlatAppearance.BorderSize = 0
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSalvar.ForeColor = System.Drawing.Color.Black
+        Me.btSalvar.ForeColor = System.Drawing.Color.White
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(5, 66)
+        Me.btSalvar.Location = New System.Drawing.Point(7, 81)
+        Me.btSalvar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(94, 37)
+        Me.btSalvar.Size = New System.Drawing.Size(90, 35)
         Me.btSalvar.TabIndex = 14
         Me.btSalvar.Text = "Salvar"
         Me.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -132,11 +138,12 @@ Partial Class frmUnidadesMedidas
         Me.btAlterar.FlatAppearance.BorderSize = 0
         Me.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAlterar.ForeColor = System.Drawing.Color.Black
+        Me.btAlterar.ForeColor = System.Drawing.Color.White
         Me.btAlterar.Image = CType(resources.GetObject("btAlterar.Image"), System.Drawing.Image)
-        Me.btAlterar.Location = New System.Drawing.Point(6, 121)
+        Me.btAlterar.Location = New System.Drawing.Point(8, 149)
+        Me.btAlterar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btAlterar.Name = "btAlterar"
-        Me.btAlterar.Size = New System.Drawing.Size(91, 36)
+        Me.btAlterar.Size = New System.Drawing.Size(90, 35)
         Me.btAlterar.TabIndex = 15
         Me.btAlterar.Text = "Editar"
         Me.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -150,28 +157,31 @@ Partial Class frmUnidadesMedidas
         Me.dgvUnidade.BackgroundColor = System.Drawing.Color.White
         Me.dgvUnidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUnidade.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvUnidade.Location = New System.Drawing.Point(15, 66)
+        Me.dgvUnidade.Location = New System.Drawing.Point(20, 81)
+        Me.dgvUnidade.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvUnidade.Name = "dgvUnidade"
         Me.dgvUnidade.ReadOnly = True
         Me.dgvUnidade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUnidade.Size = New System.Drawing.Size(258, 252)
+        Me.dgvUnidade.Size = New System.Drawing.Size(344, 310)
         Me.dgvUnidade.TabIndex = 28
         '
         'txtUnidade
         '
-        Me.txtUnidade.Location = New System.Drawing.Point(16, 40)
+        Me.txtUnidade.Location = New System.Drawing.Point(21, 49)
+        Me.txtUnidade.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUnidade.Name = "txtUnidade"
-        Me.txtUnidade.Size = New System.Drawing.Size(257, 20)
+        Me.txtUnidade.Size = New System.Drawing.Size(341, 23)
         Me.txtUnidade.TabIndex = 27
         '
         'lblUnidade
         '
         Me.lblUnidade.AutoSize = True
         Me.lblUnidade.BackColor = System.Drawing.Color.Transparent
-        Me.lblUnidade.ForeColor = System.Drawing.Color.Black
-        Me.lblUnidade.Location = New System.Drawing.Point(260, 9)
+        Me.lblUnidade.ForeColor = System.Drawing.Color.White
+        Me.lblUnidade.Location = New System.Drawing.Point(347, 11)
+        Me.lblUnidade.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUnidade.Name = "lblUnidade"
-        Me.lblUnidade.Size = New System.Drawing.Size(13, 13)
+        Me.lblUnidade.Size = New System.Drawing.Size(16, 17)
         Me.lblUnidade.TabIndex = 26
         Me.lblUnidade.Text = "0"
         Me.lblUnidade.Visible = False
@@ -180,11 +190,12 @@ Partial Class frmUnidadesMedidas
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(56, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(182, 20)
+        Me.Label1.Size = New System.Drawing.Size(268, 29)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "Unidades de Medidas"
         '
@@ -194,16 +205,19 @@ Partial Class frmUnidadesMedidas
         '
         'frmUnidadesMedidas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(398, 327)
+        Me.BackColor = System.Drawing.Color.Teal
+        Me.ClientSize = New System.Drawing.Size(531, 402)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgvUnidade)
         Me.Controls.Add(Me.txtUnidade)
         Me.Controls.Add(Me.lblUnidade)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmUnidadesMedidas"

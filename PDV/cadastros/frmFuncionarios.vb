@@ -31,7 +31,7 @@ Public Class frmFuncionarios
     End Sub
 
     Private Sub frmFuncionarios_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        '  carregarImagem()
+        carregarImagem()
     End Sub
 
     Private Sub DesabilitarCampos()
@@ -152,8 +152,6 @@ Public Class frmFuncionarios
                 cmd.Parameters.AddWithValue("@data_contratado", dtData.Text)
                 cmd.Parameters.AddWithValue("@data_demissao", txtdtDemissao.Text)
                 cmd.Parameters.AddWithValue("@imagem", byteArray)
-
-
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -380,28 +378,18 @@ Public Class frmFuncionarios
 
     Sub carregarImagem()
 
-
-        Dim img As String = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F24157424-sem-rosto-desenho-animado-jovem-garoto-preto-fino-linha-arte-icone&psig=AOvVaw3EIhBcNzAfz17XXVBkf3jj&ust=1695000675916000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKC72JLAsIEDFQAAAAAdAAAAABAO"
-
-
-        Try
-            Dim req As System.Net.HttpWebRequest
-            Dim resp As System.Net.HttpWebResponse
-            req = Net.WebRequest.Create(img)
-            req = req.Create(img)
-
-            resp = req.GetResponse
-
-            ImagemCarregada = New Bitmap(resp.GetResponseStream)
-            pbImagem.Image = ImagemCarregada
-            req.Abort()
-        Catch ex As Exception
-            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
-        Finally
-
-        End Try
+        Dim img As String = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQChBDtDqstMB0SDouMEzlGL8AJmAULEUbxBBJe9vYM3TxSVsmybYyHyFTteUZi-fkJOu0&usqp=CAU"
         ' Dim img As String = My.Resources.imagesemfoto
+        Dim req As System.Net.HttpWebRequest
+        Dim resp As System.Net.HttpWebResponse
+        req = Net.WebRequest.Create(img)
+        req = req.Create(img)
 
+        resp = req.GetResponse
+
+        ImagemCarregada = New Bitmap(resp.GetResponseStream)
+        pbImagem.Image = ImagemCarregada
+        req.Abort()
 
 
     End Sub

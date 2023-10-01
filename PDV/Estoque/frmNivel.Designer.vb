@@ -46,6 +46,7 @@ Partial Class frmNivel
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(531, 320)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(169, 20)
@@ -56,6 +57,7 @@ Partial Class frmNivel
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
         Me.lblTotal.Location = New System.Drawing.Point(702, 320)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(13, 18)
@@ -67,6 +69,7 @@ Partial Class frmNivel
         Me.lblSair.AutoSize = True
         Me.lblSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblSair.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSair.ForeColor = System.Drawing.Color.White
         Me.lblSair.Location = New System.Drawing.Point(12, 316)
         Me.lblSair.Name = "lblSair"
         Me.lblSair.Size = New System.Drawing.Size(34, 18)
@@ -77,7 +80,7 @@ Partial Class frmNivel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(780, 373)
         Me.Controls.Add(Me.lblSair)
         Me.Controls.Add(Me.Label11)
