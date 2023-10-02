@@ -57,9 +57,9 @@ Partial Class frmVendas
         Me.lblTroco = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Operador = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblEmpresa = New System.Windows.Forms.ToolStripStatusLabel()
         Me.nome = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblEmpresa = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Operador = New System.Windows.Forms.ToolStripStatusLabel()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -71,7 +71,7 @@ Partial Class frmVendas
         Me.txtCodBarras.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodBarras.Location = New System.Drawing.Point(450, 75)
         Me.txtCodBarras.Name = "txtCodBarras"
-        Me.txtCodBarras.Size = New System.Drawing.Size(450, 38)
+        Me.txtCodBarras.Size = New System.Drawing.Size(448, 38)
         Me.txtCodBarras.TabIndex = 220
         '
         'btRelatorio
@@ -214,7 +214,7 @@ Partial Class frmVendas
         Me.dg.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(13, 60)
+        Me.dg.Location = New System.Drawing.Point(10, 61)
         Me.dg.Margin = New System.Windows.Forms.Padding(6)
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
@@ -283,7 +283,6 @@ Partial Class frmVendas
         Me.cbCliente.Name = "cbCliente"
         Me.cbCliente.Size = New System.Drawing.Size(448, 28)
         Me.cbCliente.TabIndex = 178
-        Me.cbCliente.Visible = False
         '
         'txtNumVenda
         '
@@ -503,13 +502,12 @@ Partial Class frmVendas
         Me.StatusStrip1.TabIndex = 246
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Operador
+        'nome
         '
-        Me.Operador.Enabled = False
-        Me.Operador.Margin = New System.Windows.Forms.Padding(35, 3, 0, 2)
-        Me.Operador.Name = "Operador"
-        Me.Operador.Size = New System.Drawing.Size(57, 17)
-        Me.Operador.Text = "Operador"
+        Me.nome.Name = "nome"
+        Me.nome.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
+        Me.nome.Size = New System.Drawing.Size(104, 17)
+        Me.nome.Text = "Nome da Empresa"
         '
         'lblEmpresa
         '
@@ -517,12 +515,13 @@ Partial Class frmVendas
         Me.lblEmpresa.Size = New System.Drawing.Size(52, 17)
         Me.lblEmpresa.Text = "Empresa"
         '
-        'nome
+        'Operador
         '
-        Me.nome.Name = "nome"
-        Me.nome.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
-        Me.nome.Size = New System.Drawing.Size(104, 17)
-        Me.nome.Text = "Nome da Empresa"
+        Me.Operador.Enabled = False
+        Me.Operador.Margin = New System.Windows.Forms.Padding(35, 3, 0, 2)
+        Me.Operador.Name = "Operador"
+        Me.Operador.Size = New System.Drawing.Size(57, 17)
+        Me.Operador.Text = "Operador"
         '
         'frmVendas
         '

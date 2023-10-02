@@ -16,6 +16,8 @@ Module conexao
         End If
     End Sub
 
-
     Public usuarioNome As String
+
+    Public idempresa As String
+
 End Module

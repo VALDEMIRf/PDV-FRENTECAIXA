@@ -22,6 +22,7 @@ Public Class frmVendas
 
 
         lblUsuario.Text = usuarioNome
+        lblEmpresa.Text = idempresa
 
         If id_venda > 0 Then
             cbProduto.SelectedValue = id_venda
@@ -30,11 +31,7 @@ Public Class frmVendas
 
         End If
 
-        CarregarEmpresa()
-
         Listar()
-
-
 
         btnExcluir.Enabled = False
         btRelatorio.Enabled = False
@@ -79,6 +76,9 @@ Public Class frmVendas
         dg.Columns(8).Visible = False
         dg.Columns(9).Visible = False
         dg.Columns(10).Visible = False
+        dg.Columns(4).Visible = False
+        dg.Columns(7).Visible = False
+
 
         dg.Columns(1).HeaderText = "N° Venda"
         dg.Columns(2).HeaderText = "Produto"
@@ -88,12 +88,11 @@ Public Class frmVendas
         dg.Columns(6).HeaderText = "Valor Total"
         dg.Columns(7).HeaderText = "Cód. Barras"
         ' dg.Columns(8).HeaderText = "Funcionário"
-        dg.Columns(9).HeaderText = "Dt Venda"
+        ' dg.Columns(9).HeaderText = "Dt Venda"
 
 
         dg.Columns(1).Width = 60
         dg.Columns(2).Width = 180
-        ' dg.Columns(3).Width = 180
         dg.Columns(4).Width = 90
         dg.Columns(5).Width = 50
         dg.Columns(6).Width = 90
@@ -111,13 +110,8 @@ Public Class frmVendas
 
         Try
             abrir()
-            '   da = New SqlDataAdapter("pa_VendasLista", con)
-            '  da.Fill(dt)
-            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
 
-            '            ven.valor,pro.codigo_barras,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente
-            'FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto 
-            'INNER JOIN tbClientes  as cli on ven.id_cliente =cli.id_cliente order by num_vendas desc
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
 
             cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
             cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
@@ -160,6 +154,8 @@ Public Class frmVendas
         Try
             abrir()
             DA = New SqlDataAdapter("pa_cliente_listar", con)
+
+
             DA.Fill(DT)
             cbCliente.DisplayMember = "nome"
             cbCliente.ValueMember = "id_cliente"
@@ -171,27 +167,38 @@ Public Class frmVendas
 
     End Sub
 
-    Sub CarregarEmpresa()
+    'Sub CarregarEmpresa()
+    '    Dim dt As New DataTable
+    '    Dim da As SqlDataAdapter
+    '    Dim cmd As SqlCommand
+    '    Dim dr As SqlDataReader
+    '    Dim bolResult As Boolean
+    '    Try
+    '        abrir()
+    '        '  da = New SqlDataAdapter("pa_empresa_listar", con)
+    '        'da = New SqlDataAdapter("SELECT razaoSocial FROM tbEmpresa ", con)
 
-        Dim cmd As New SqlCommand("pa_empresa_listar", con)
-        Try
-                abrir()
-                cmd.CommandType = 4
-            'cmd.Parameters.AddWithValue("@id_produto", cbProduto.SelectedValue)
-            'cmd.Parameters.Add("@valor_venda", SqlDbType.Decimal).Direction = 2
-            'cmd.Parameters.Add("@quant", SqlDbType.Int).Direction = 2
-            'cmd.Parameters.Add("@quant_vendida", SqlDbType.Int).Direction = 2
-            cmd.Parameters.Add("@razaoSocial", SqlDbType.VarChar, 100).Direction = 2
-            cmd.ExecuteNonQuery()
+    '        'da.Fill(dt)
+    '        'lblEmpresa.Text = da.ToString
 
-            Dim empresa As String = cmd.Parameters("@razaoSocial").Value
-            lblEmpresa.Text = empresa
+    '        cmd = New SqlCommand("pa_empresaListaNome", con)
+    '        cmd.CommandType = CommandType.StoredProcedure
 
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
-    End Sub
+    '        dr = cmd.ExecuteReader()
+
+    '        If dr.Read() Then
+    '            lblEmpresa.Text = dr.Item("razaoSocial")
+    '            bolResult = True
+    '        End If
+
+
+    '    Catch ex As Exception
+    '        MessageBox.Show("Erro ao Listar o nome da Empresa" + ex.Message.ToString)
+    '    Finally
+
+    '        fechar()
+    '    End Try
+    'End Sub
 
     Private Sub btnNovo_Click_1(sender As Object, e As EventArgs) Handles btnNovo.Click
         CarregarClientes()
