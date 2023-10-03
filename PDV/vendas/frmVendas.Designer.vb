@@ -48,7 +48,6 @@ Partial Class frmVendas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotalUnit = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblDesconto = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblTotalCompra = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -60,6 +59,7 @@ Partial Class frmVendas
         Me.nome = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblEmpresa = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Operador = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.txtDesconto = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -389,25 +389,12 @@ Partial Class frmVendas
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(950, 250)
+        Me.Label5.Location = New System.Drawing.Point(929, 246)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 39)
         Me.Label5.TabIndex = 239
         Me.Label5.Text = "R$"
-        '
-        'lblDesconto
-        '
-        Me.lblDesconto.AutoSize = True
-        Me.lblDesconto.BackColor = System.Drawing.Color.White
-        Me.lblDesconto.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDesconto.ForeColor = System.Drawing.Color.Black
-        Me.lblDesconto.Location = New System.Drawing.Point(1010, 248)
-        Me.lblDesconto.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lblDesconto.Name = "lblDesconto"
-        Me.lblDesconto.Size = New System.Drawing.Size(28, 39)
-        Me.lblDesconto.TabIndex = 238
-        Me.lblDesconto.Text = "-"
         '
         'Label7
         '
@@ -523,6 +510,18 @@ Partial Class frmVendas
         Me.Operador.Size = New System.Drawing.Size(57, 17)
         Me.Operador.Text = "Operador"
         '
+        'txtDesconto
+        '
+        Me.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDesconto.Enabled = False
+        Me.txtDesconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDesconto.Location = New System.Drawing.Point(999, 248)
+        Me.txtDesconto.Name = "txtDesconto"
+        Me.txtDesconto.ReadOnly = True
+        Me.txtDesconto.Size = New System.Drawing.Size(100, 38)
+        Me.txtDesconto.TabIndex = 247
+        Me.txtDesconto.Text = "-"
+        '
         'frmVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -530,6 +529,7 @@ Partial Class frmVendas
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1192, 627)
+        Me.Controls.Add(Me.txtDesconto)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.lblTroco)
         Me.Controls.Add(Me.Label9)
@@ -537,7 +537,6 @@ Partial Class frmVendas
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblTotalCompra)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.lblDesconto)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblTotalUnit)
         Me.Controls.Add(Me.Label2)
@@ -604,7 +603,6 @@ Partial Class frmVendas
     Friend WithEvents Label3 As Label
     Friend WithEvents lblTotalUnit As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents lblDesconto As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents lblTotalCompra As Label
     Friend WithEvents Label9 As Label
@@ -616,4 +614,5 @@ Partial Class frmVendas
     Friend WithEvents nome As ToolStripStatusLabel
     Friend WithEvents lblEmpresa As ToolStripStatusLabel
     Friend WithEvents Operador As ToolStripStatusLabel
+    Friend WithEvents txtDesconto As TextBox
 End Class

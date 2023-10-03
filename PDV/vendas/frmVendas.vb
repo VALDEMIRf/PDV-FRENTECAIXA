@@ -81,11 +81,11 @@ Public Class frmVendas
 
 
         dg.Columns(1).HeaderText = "N° Venda"
-        dg.Columns(2).HeaderText = "Produto"
+        dg.Columns(2).HeaderText = "Descrição"
         ' dg.Columns(3).HeaderText = "Cliente"
-        dg.Columns(4).HeaderText = "Valor Unit"
+        dg.Columns(4).HeaderText = "Vlr. Unit"
         dg.Columns(5).HeaderText = "Quant"
-        dg.Columns(6).HeaderText = "Valor Total"
+        dg.Columns(6).HeaderText = "Vlr. Total"
         dg.Columns(7).HeaderText = "Cód. Barras"
         ' dg.Columns(8).HeaderText = "Funcionário"
         ' dg.Columns(9).HeaderText = "Dt Venda"
@@ -111,7 +111,7 @@ Public Class frmVendas
         Try
             abrir()
 
-            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
 
             cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
             cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
@@ -149,56 +149,24 @@ Public Class frmVendas
     End Sub
 
     Sub CarregarClientes()
-        Dim DT As New DataTable
-        Dim DA As SqlDataAdapter
-        Try
-            abrir()
-            DA = New SqlDataAdapter("pa_cliente_listar", con)
+        'Dim DT As New DataTable
+        'Dim DA As SqlDataAdapter
+        'Try
+        '    abrir()
+        '    DA = New SqlDataAdapter("pa_cliente_listar", con)
 
-
-            DA.Fill(DT)
-            cbCliente.DisplayMember = "nome"
-            cbCliente.ValueMember = "id_cliente"
-            cbCliente.DataSource = DT
-        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        Finally
-            fechar()
-        End Try
+        '    DA.Fill(DT)
+        '    cbCliente.DisplayMember = "nome"
+        '    cbCliente.ValueMember = "id_cliente"
+        '    cbCliente.DataSource = DT
+        'Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        'Finally
+        '    fechar()
+        'End Try
 
     End Sub
 
-    'Sub CarregarEmpresa()
-    '    Dim dt As New DataTable
-    '    Dim da As SqlDataAdapter
-    '    Dim cmd As SqlCommand
-    '    Dim dr As SqlDataReader
-    '    Dim bolResult As Boolean
-    '    Try
-    '        abrir()
-    '        '  da = New SqlDataAdapter("pa_empresa_listar", con)
-    '        'da = New SqlDataAdapter("SELECT razaoSocial FROM tbEmpresa ", con)
 
-    '        'da.Fill(dt)
-    '        'lblEmpresa.Text = da.ToString
-
-    '        cmd = New SqlCommand("pa_empresaListaNome", con)
-    '        cmd.CommandType = CommandType.StoredProcedure
-
-    '        dr = cmd.ExecuteReader()
-
-    '        If dr.Read() Then
-    '            lblEmpresa.Text = dr.Item("razaoSocial")
-    '            bolResult = True
-    '        End If
-
-
-    '    Catch ex As Exception
-    '        MessageBox.Show("Erro ao Listar o nome da Empresa" + ex.Message.ToString)
-    '    Finally
-
-    '        fechar()
-    '    End Try
-    'End Sub
 
     Private Sub btnNovo_Click_1(sender As Object, e As EventArgs) Handles btnNovo.Click
         CarregarClientes()
@@ -670,6 +638,30 @@ Public Class frmVendas
         If e.Control = True And e.KeyCode = Keys.NumPad1 Then
             ' MsgBox("Tecla 1 pressionada")
             txtCodBarras.Text = ""
+        End If
+    End Sub
+
+    Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
+        If txtQuantidade.Text <> "0" And txtValor.Text <> "" Then
+            Dim valor As Decimal
+            Dim quant As Decimal
+            Dim total As Decimal
+            valor = txtValor.Text
+            quant = txtQuantidade.Text
+            total = valor * quant
+            lblTotalUnit.Text = total
+        End If
+    End Sub
+
+    Private Sub txtDesconto_TextChanged(sender As Object, e As EventArgs) Handles txtDesconto.TextChanged
+        If lblTotal.Text <> "0" And txtDesconto.Text <> "" Then
+            Dim subTotal As Decimal
+            Dim desc As Decimal
+            Dim total As Decimal
+            subTotal = lblTotal.Text
+            desc = txtDesconto.Text
+            total = subTotal - desc
+            lblTotalCompra.Text = total
         End If
     End Sub
 End Class

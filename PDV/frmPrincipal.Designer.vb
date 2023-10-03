@@ -447,7 +447,7 @@ Partial Class frmPrincipal
         Me.lblHoraSangria.BackColor = System.Drawing.Color.Transparent
         Me.lblHoraSangria.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHoraSangria.ForeColor = System.Drawing.Color.Black
-        Me.lblHoraSangria.Location = New System.Drawing.Point(260, 309)
+        Me.lblHoraSangria.Location = New System.Drawing.Point(260, 315)
         Me.lblHoraSangria.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblHoraSangria.Name = "lblHoraSangria"
         Me.lblHoraSangria.Size = New System.Drawing.Size(23, 31)
