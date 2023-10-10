@@ -77,7 +77,7 @@ Public Class frmListarVendas
         Try
             abrir()
 
-            cmd = New SqlCommand("SELECT ven.id_vendas,ven.num_vendas,pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes  as cli on ven.id_cliente =cli.id_cliente WHERE ven.data_venda= @data order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas,ven.num_vendas,pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente =cli.id_cliente WHERE ven.data_venda= @data order by num_vendas desc", con)
 
             cmd.Parameters.AddWithValue("@data", Now.Date())
 
@@ -129,7 +129,7 @@ Public Class frmListarVendas
         Dim cmd As SqlCommand
         Try
             abrir()
-            cmd = New SqlCommand("SELECT ven.id_vendas,ven.num_vendas,pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tbClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas,ven.num_vendas,pro.nome,cli.nome,pro.valor_venda,ven.quantidade,ven.valor,ven.funcionario,ven.data_venda,ven.id_produto,ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data order by num_vendas desc", con)
             'cmd = New SqlCommand("pa_VendasListar", con)
 
             cmd.Parameters.AddWithValue("@data", dtData.Text)
@@ -142,7 +142,7 @@ Public Class frmListarVendas
             FormatarDG()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar" + ex.Message)
+            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
             fechar()
         End Try
     End Sub
@@ -154,7 +154,7 @@ Public Class frmListarVendas
         Dim cmd As SqlCommand
         Try
             abrir()
-            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade, ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto = pro.id_produto INNER JOIN tbClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.funcionario = @func order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade, ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto = pro.id_produto INNER JOIN tblClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.funcionario = @func order by num_vendas desc", con)
             ' cmd = New SqlCommand("pa_vendaslistarprincipal", con)
 
 
@@ -168,7 +168,7 @@ Public Class frmListarVendas
             FormatarDG()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar" + ex.Message)
+            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
             fechar()
         End Try
     End Sub
@@ -179,7 +179,7 @@ Public Class frmListarVendas
         Dim cmd As SqlCommand
         Try
             abrir()
-            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade, ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto = pro.id_produto INNER JOIN tbClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.id_cliente = @cli order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade, ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto = pro.id_produto INNER JOIN tblClientes as cli on ven.id_cliente = cli.id_cliente WHERE ven.id_cliente = @cli order by num_vendas desc", con)
             ' cmd = New SqlCommand("pa_vendaslistarprincipal", con)
 
 
@@ -193,7 +193,7 @@ Public Class frmListarVendas
             FormatarDG()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar" + ex.Message)
+            MessageBox.Show("Erro ao Listar" + ex.Message.ToString)
             fechar()
         End Try
     End Sub

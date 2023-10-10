@@ -20,13 +20,12 @@ Public Class frmVendas
         DesabilitarCampos()
         btnSalvar.Enabled = False
 
-
         lblUsuario.Text = usuarioNome
         lblEmpresa.Text = idempresa
 
         If id_venda > 0 Then
             cbProduto.SelectedValue = id_venda
-            ' txtQuantidade.Enabled = True
+
             btnSalvar.Enabled = True
 
         End If
@@ -64,7 +63,7 @@ Public Class frmVendas
         txtNumVenda.Text = ""
         'txtBuscar.Text = ""
         ' txtEstoque.Text = ""
-        txtQuantidade.Text = ""
+        txtQuantidade.Text = "1"
         'txtValor.Text = ""
         'cbCliente.Text = Nothing
         'cbProduto.Text = Nothing
@@ -111,7 +110,7 @@ Public Class frmVendas
         Try
             abrir()
 
-            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
+            cmd = New SqlCommand("SELECT ven.id_vendas, ven.num_vendas, pro.nome, cli.nome, pro.valor_venda, ven.quantidade,ven.valor, ven.funcionario, ven.data_venda, ven.id_produto, ven.id_cliente,pro.codigo_barras FROM tbVendas as ven INNER JOIN tbProdutos as pro on ven.id_produto=pro.id_produto INNER JOIN tblClientes  as cli on ven.id_cliente = cli.id_cliente WHERE ven.data_venda= @data and ven.funcionario=@funcionario order by num_vendas desc", con)
 
             cmd.Parameters.AddWithValue("@data", Now.ToShortDateString)
             cmd.Parameters.AddWithValue("@funcionario", usuarioNome)
@@ -149,24 +148,22 @@ Public Class frmVendas
     End Sub
 
     Sub CarregarClientes()
-        'Dim DT As New DataTable
-        'Dim DA As SqlDataAdapter
-        'Try
-        '    abrir()
-        '    DA = New SqlDataAdapter("pa_cliente_listar", con)
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            DA = New SqlDataAdapter("pa_cliente_listar", con)
 
-        '    DA.Fill(DT)
-        '    cbCliente.DisplayMember = "nome"
-        '    cbCliente.ValueMember = "id_cliente"
-        '    cbCliente.DataSource = DT
-        'Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
-        'Finally
-        '    fechar()
-        'End Try
+            DA.Fill(DT)
+            cbCliente.DisplayMember = "nome"
+            cbCliente.ValueMember = "id_cliente"
+            cbCliente.DataSource = DT
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
 
     End Sub
-
-
 
     Private Sub btnNovo_Click_1(sender As Object, e As EventArgs) Handles btnNovo.Click
         CarregarClientes()
@@ -340,7 +337,7 @@ Public Class frmVendas
                 txtValor.Enabled = False
                 txtEstoque.Enabled = False
 
-                txtQuantidade.Text = ""
+                txtQuantidade.Text = "1"
 
                 btRelatorio.Enabled = True
 
@@ -539,7 +536,6 @@ Public Class frmVendas
         End If
     End Sub
 
-
     Private Sub BuscarVenda()
         If txtNumVenda.Text = "" Then
             Listar()
@@ -558,10 +554,7 @@ Public Class frmVendas
                 da.Fill(dt)
                 dg.DataSource = dt
 
-
                 totalizar()
-
-
             Catch ex As Exception
                 MessageBox.Show("Erro ao Listar" + ex.Message)
                 fechar()
@@ -585,18 +578,6 @@ Public Class frmVendas
 
             txtNumVenda.Text = valorInteiro.ToString()
 
-            'EXEMPLO DADO POR PORTAL HUGO CURSOS
-
-            ' Dim hora As String = Now.Second
-            'Dim hora As String = Now.ToLongTimeString
-            'Dim strNumeros() As String = hora.Split(":")
-            'Dim ultimaParte As String = strNumeros(2)
-            'Dim num_final As Integer
-            'num_final = num + 1
-            ' Dim num_pers As String
-            'num_pers = num_final.ToString + hora
-
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -617,10 +598,6 @@ Public Class frmVendas
 
         form.ShowDialog()
     End Sub
-
-
-
-
 
     Private Sub btSair_Click_2(sender As Object, e As EventArgs) Handles btSair.Click
         Me.Close()
@@ -663,5 +640,17 @@ Public Class frmVendas
             total = subTotal - desc
             lblTotalCompra.Text = total
         End If
+    End Sub
+
+    Private Sub txtQuantVendida_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantVendida.KeyPress
+        permiteSoNumeros(sender, e)
+    End Sub
+
+    Private Sub txtQuantidade_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantidade.KeyPress
+        permiteSoNumeros(sender, e)
+    End Sub
+
+    Private Sub txtEstoque_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstoque.KeyPress
+        permiteSoNumeros(sender, e)
     End Sub
 End Class

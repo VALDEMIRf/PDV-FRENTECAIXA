@@ -61,6 +61,7 @@ Partial Class frmApagar
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -513,11 +514,19 @@ Partial Class frmApagar
         Me.Label1.TabIndex = 206
         Me.Label1.Text = "Buscar:"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(718, 348)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 220
+        '
         'frmApagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(955, 450)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.lblUsuario)
@@ -584,4 +593,5 @@ Partial Class frmApagar
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

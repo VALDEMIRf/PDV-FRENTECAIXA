@@ -51,7 +51,6 @@ Partial Class frmVendas
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblTotalCompra = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblValorRecebido = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lblTroco = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
@@ -60,6 +59,7 @@ Partial Class frmVendas
         Me.lblEmpresa = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Operador = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtDesconto = New System.Windows.Forms.TextBox()
+        Me.txtVlrRecebido = New System.Windows.Forms.TextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -192,9 +192,8 @@ Partial Class frmVendas
         Me.lblTotal.Location = New System.Drawing.Point(1010, 157)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(28, 39)
+        Me.lblTotal.Size = New System.Drawing.Size(0, 39)
         Me.lblTotal.TabIndex = 231
-        Me.lblTotal.Text = "-"
         '
         'txtEstoque
         '
@@ -272,6 +271,7 @@ Partial Class frmVendas
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.Size = New System.Drawing.Size(175, 31)
         Me.txtQuantidade.TabIndex = 191
+        Me.txtQuantidade.Text = "1"
         '
         'cbCliente
         '
@@ -307,9 +307,9 @@ Partial Class frmVendas
         'pbImagem
         '
         Me.pbImagem.Enabled = False
-        Me.pbImagem.Location = New System.Drawing.Point(452, 549)
+        Me.pbImagem.Location = New System.Drawing.Point(670, 452)
         Me.pbImagem.Name = "pbImagem"
-        Me.pbImagem.Size = New System.Drawing.Size(25, 37)
+        Me.pbImagem.Size = New System.Drawing.Size(173, 140)
         Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbImagem.TabIndex = 226
         Me.pbImagem.TabStop = False
@@ -379,9 +379,8 @@ Partial Class frmVendas
         Me.lblTotalUnit.Location = New System.Drawing.Point(1010, 75)
         Me.lblTotalUnit.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTotalUnit.Name = "lblTotalUnit"
-        Me.lblTotalUnit.Size = New System.Drawing.Size(24, 32)
+        Me.lblTotalUnit.Size = New System.Drawing.Size(0, 32)
         Me.lblTotalUnit.TabIndex = 236
-        Me.lblTotalUnit.Text = "-"
         '
         'Label5
         '
@@ -402,7 +401,7 @@ Partial Class frmVendas
         Me.Label7.BackColor = System.Drawing.Color.White
         Me.Label7.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Green
-        Me.Label7.Location = New System.Drawing.Point(950, 339)
+        Me.Label7.Location = New System.Drawing.Point(929, 335)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 39)
@@ -415,12 +414,11 @@ Partial Class frmVendas
         Me.lblTotalCompra.BackColor = System.Drawing.Color.White
         Me.lblTotalCompra.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalCompra.ForeColor = System.Drawing.Color.Green
-        Me.lblTotalCompra.Location = New System.Drawing.Point(1010, 339)
+        Me.lblTotalCompra.Location = New System.Drawing.Point(989, 335)
         Me.lblTotalCompra.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTotalCompra.Name = "lblTotalCompra"
-        Me.lblTotalCompra.Size = New System.Drawing.Size(28, 39)
+        Me.lblTotalCompra.Size = New System.Drawing.Size(0, 39)
         Me.lblTotalCompra.TabIndex = 240
-        Me.lblTotalCompra.Text = "-"
         '
         'Label9
         '
@@ -428,25 +426,12 @@ Partial Class frmVendas
         Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(950, 428)
+        Me.Label9.Location = New System.Drawing.Point(932, 430)
         Me.Label9.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 39)
         Me.Label9.TabIndex = 243
         Me.Label9.Text = "R$"
-        '
-        'lblValorRecebido
-        '
-        Me.lblValorRecebido.AutoSize = True
-        Me.lblValorRecebido.BackColor = System.Drawing.Color.White
-        Me.lblValorRecebido.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblValorRecebido.ForeColor = System.Drawing.Color.Black
-        Me.lblValorRecebido.Location = New System.Drawing.Point(1010, 428)
-        Me.lblValorRecebido.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
-        Me.lblValorRecebido.Name = "lblValorRecebido"
-        Me.lblValorRecebido.Size = New System.Drawing.Size(28, 39)
-        Me.lblValorRecebido.TabIndex = 242
-        Me.lblValorRecebido.Text = "-"
         '
         'Label12
         '
@@ -454,7 +439,7 @@ Partial Class frmVendas
         Me.Label12.BackColor = System.Drawing.Color.White
         Me.Label12.Font = New System.Drawing.Font("Arial", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(950, 529)
+        Me.Label12.Location = New System.Drawing.Point(940, 529)
         Me.Label12.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 39)
@@ -470,9 +455,8 @@ Partial Class frmVendas
         Me.lblTroco.Location = New System.Drawing.Point(1010, 529)
         Me.lblTroco.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTroco.Name = "lblTroco"
-        Me.lblTroco.Size = New System.Drawing.Size(28, 39)
+        Me.lblTroco.Size = New System.Drawing.Size(0, 39)
         Me.lblTroco.TabIndex = 244
-        Me.lblTroco.Text = "-"
         '
         'lblUsuario
         '
@@ -513,14 +497,20 @@ Partial Class frmVendas
         'txtDesconto
         '
         Me.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtDesconto.Enabled = False
         Me.txtDesconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDesconto.Location = New System.Drawing.Point(999, 248)
         Me.txtDesconto.Name = "txtDesconto"
-        Me.txtDesconto.ReadOnly = True
-        Me.txtDesconto.Size = New System.Drawing.Size(100, 38)
+        Me.txtDesconto.Size = New System.Drawing.Size(164, 38)
         Me.txtDesconto.TabIndex = 247
-        Me.txtDesconto.Text = "-"
+        '
+        'txtVlrRecebido
+        '
+        Me.txtVlrRecebido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtVlrRecebido.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtVlrRecebido.Location = New System.Drawing.Point(994, 431)
+        Me.txtVlrRecebido.Name = "txtVlrRecebido"
+        Me.txtVlrRecebido.Size = New System.Drawing.Size(164, 38)
+        Me.txtVlrRecebido.TabIndex = 248
         '
         'frmVendas
         '
@@ -529,11 +519,11 @@ Partial Class frmVendas
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1192, 627)
+        Me.Controls.Add(Me.txtVlrRecebido)
         Me.Controls.Add(Me.txtDesconto)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.lblTroco)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.lblValorRecebido)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblTotalCompra)
         Me.Controls.Add(Me.Label5)
@@ -606,7 +596,6 @@ Partial Class frmVendas
     Friend WithEvents Label7 As Label
     Friend WithEvents lblTotalCompra As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents lblValorRecebido As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents lblTroco As Label
     Friend WithEvents lblUsuario As ToolStripStatusLabel
@@ -615,4 +604,5 @@ Partial Class frmVendas
     Friend WithEvents lblEmpresa As ToolStripStatusLabel
     Friend WithEvents Operador As ToolStripStatusLabel
     Friend WithEvents txtDesconto As TextBox
+    Friend WithEvents txtVlrRecebido As TextBox
 End Class
